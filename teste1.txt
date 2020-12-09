@@ -1,0 +1,26 @@
+CONCEITOS: [ "pensamento Crítico" , "desenvolvimento Web" , "pensamento Funcional" ]
+ALUNOS : [ {
+	"id" : 0,
+	"name" : Gabriel,
+	"characteristics" : {
+		"attention": 20,
+    	"self-learning": 39,
+    	"resolve": 40,
+    	"deduction" : 70,
+    	"motivation": 60,
+    	"time_management" : 5
+    }
+} ]
+RECURSOS: [ {
+	"id" : 0,
+	"name": "Ficha de PRI",
+	"concepts": ["pensamento Funcional","desenvolvimento Web"] 
+	"characteristics" : {
+		"attention": 45,
+    	"self-learning": 22,
+    	"resolve": 30,
+    	"deduction" : 40,
+    	"motivation": 60,
+    	"time_management" : 45
+    }
+}]
