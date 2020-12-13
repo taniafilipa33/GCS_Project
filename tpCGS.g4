@@ -1,6 +1,9 @@
 grammar tpCGS;
 //PARSER
-
+@header{
+    import java.util.HashMap;
+    import java.util.ArrayList;
+}
 @members{
 
   class Entity {
@@ -18,7 +21,7 @@ grammar tpCGS;
   }
 
   class JsonNum implements JsonValue {
-   int val = null;
+   int val = -1;
 
    JsonNum(int i){
     this.val = i;
@@ -29,7 +32,7 @@ grammar tpCGS;
     HashMap<String, JsonValue> val;
 
     Json (HashMap<String, JsonValue> req){
-        this.val = req.clone();
+        this.val = req;
     }
   }
 
@@ -37,7 +40,7 @@ grammar tpCGS;
     ArrayList<String> val;
 
     JsonList (ArrayList<String> req){
-        this.val = req.clone();
+        this.val = req;
     }
   }
 
@@ -46,27 +49,22 @@ grammar tpCGS;
 main
 @init {
     ArrayList<String> concepts = new ArrayList<>();
-    ArrayList<HashMap<int, Entity>> students = new ArrayList<>();
-    ArrayList<HashMap<int, Entity>> resources = new ArrayList<>();
+    ArrayList<HashMap<Integer, Entity>> students = new ArrayList<>();
+    ArrayList<HashMap<Integer, Entity>> resources = new ArrayList<>();
 }
 :
     conc ':' c1=list[concepts]
     stu':'  a1=jsonList[students]
     res ':' r1=jsonList[resources] ;
 
-jsonList[ArrayList<HashMap<int, Entity>> genIN] returns [ArrayList<HashMap<int, Entity>> genOUT]
+jsonList[ArrayList<HashMap<Integer, Entity>> genIN] returns [ArrayList<HashMap<Integer, Entity>> genOUT]
 @init {
     Entity ent = new Entity();
     ent.data = new HashMap<>();
-
-    HashMap<int, Entity> ret = new HashMap<>();
 }
 
-    : '[' jsonObject (',' g2=jsonObject )* ']'
-    {
-        ret.put(ent.data.get("id"), ent);
-        genOUT.add(ret);
-    }
+    : '[' g1=jsonObject {ent.data = $g1.ret; genOUT.add(ent);}(',' g2=jsonObject {Entity ent2 =  new Entity(); ent2.data = new HashMap<>(); ent2.data = $g2.ret; genOUT.add(ent2);})* ']'
+    
     |
     ;
 
@@ -75,21 +73,20 @@ jsonObject returns [HashMap<String, JsonValue> ret]
     HashMap<String, JsonValue> req = new HashMap<>();
 }
 :
- '{' pairKeyValue[req] (',' pairKeyValue[req])* '}' {ret = req}
+ '{' pairKeyValue[req] (',' pairKeyValue[req])* '}' {$ret = req;}
  ;
 
+list[ArrayList<String> conceptsIN] returns [ArrayList<String> conceptsOUT]
+        : '[' qw1=quotedWord {conceptsIN.add($qw1.text);$conceptsOUT = $conceptsIN;}
+         (cs2=resOfL[$conceptsOUT] {$conceptsOUT = $cs2.concOUT;} )* ']' ;
 
-list[ArrayList<String> conceptsIN] returns [ArrayList<String> conceptsOUT;]
-        : '[' quotedWord {$conceptsIN.add($2);}
-         (cs2=resOfL[conceptsIN] {$conceptsIN = cs2;} )* ']' {$conceptsOUT = $conceptsIN} ;
+resOfL[ArrayList<String> concIN] returns [ArrayList<String>concOUT]:
+        ',' qw2=quotedWord {$concIN.add($qw2.text);$concOUT = $concIN;} ; 
 
-resOfL[ArrayList<String> concIN] returns [ArrayList<String>concOUT;]:
-        ',' quotedWord {$concIN.add($2);$concOUT = $concIN} ;
-
-pairKeyValue[HashMap<int,Entity> kIN;] returns [HashMap<int,Entity> kOUT] : key=quotedWord ':' val=jsonValue {kOUT = kIN.put(key.text, val)} ;
+pairKeyValue[HashMap<String, JsonValue> kIN] returns [HashMap<String, JsonValue> kOUT] : key=quotedWord ':' val=jsonValue {kOUT = kIN.put(key.text, val);} ;
 
 jsonValue returns [JsonValue val]:
-          num {$val = new JsonNum($1.int);}
+          num {$val = new JsonNum(Integer.parseInt($1.text));}
         | quotedWord {$val = new JsonString($1.text);}
         | ret=jsonObject {$val = new Json(ret);}
         | {ArrayList<String> concepts = new ArrayList<>();} c2=list[concepts] {$val = new JsonList(c2);}
