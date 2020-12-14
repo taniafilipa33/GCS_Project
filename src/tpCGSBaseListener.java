@@ -1,4 +1,8 @@
-// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS\tpCGS.g4 by ANTLR 4.8
+// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.8
+
+    import java.util.HashMap;
+    import java.util.ArrayList;
+
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -27,13 +31,25 @@ public class tpCGSBaseListener implements tpCGSListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterJson(tpCGSParser.JsonContext ctx) { }
+	@Override public void enterJsonList(tpCGSParser.JsonListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitJson(tpCGSParser.JsonContext ctx) { }
+	@Override public void exitJsonList(tpCGSParser.JsonListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterJsonObject(tpCGSParser.JsonObjectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitJsonObject(tpCGSParser.JsonObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -46,6 +62,18 @@ public class tpCGSBaseListener implements tpCGSListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitList(tpCGSParser.ListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterResOfL(tpCGSParser.ResOfLContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitResOfL(tpCGSParser.ResOfLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

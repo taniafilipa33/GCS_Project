@@ -45,7 +45,6 @@ grammar tpCGS;
   }
 
 }
-
 main
 @init {
     ArrayList<String> concepts = new ArrayList<>();
@@ -61,9 +60,13 @@ jsonList[ArrayList<HashMap<Integer, Entity>> genIN] returns [ArrayList<HashMap<I
 @init {
     Entity ent = new Entity();
     ent.data = new HashMap<>();
+    Entity ent2 =  new Entity();
+    ent2.data = new HashMap<>();
+    HashMap<Integer,Entity> add = new HashMap<>();
+    int i = 0;
 }
 
-    : '[' g1=jsonObject {ent.data = $g1.ret; genOUT.add(ent);}(',' g2=jsonObject {Entity ent2 =  new Entity(); ent2.data = new HashMap<>(); ent2.data = $g2.ret; genOUT.add(ent2);})* ']'
+    : '[' g1=jsonObject {ent.data = $g1.ret; add.put(i,ent);}(',' g2=jsonObject { ent2.data = $g2.ret; add.put(i,ent2); i= i+1;})* ']' { $genIN.add(add); $genOUT=genIN;}
     
     |
     ;
@@ -83,13 +86,21 @@ list[ArrayList<String> conceptsIN] returns [ArrayList<String> conceptsOUT]
 resOfL[ArrayList<String> concIN] returns [ArrayList<String>concOUT]:
         ',' qw2=quotedWord {$concIN.add($qw2.text);$concOUT = $concIN;} ; 
 
-pairKeyValue[HashMap<String, JsonValue> kIN] returns [HashMap<String, JsonValue> kOUT] : key=quotedWord ':' val=jsonValue {kOUT = kIN.put(key.text, val);} ;
+pairKeyValue[HashMap<String, JsonValue> kIN] returns [HashMap<String, JsonValue> kOUT]
+: key=quotedWord ':' vv=jsonValue
+{$kIN.put($key.text, $vv.val);$kOUT = $kIN;}
+;
 
-jsonValue returns [JsonValue val]:
-          num {$val = new JsonNum(Integer.parseInt($1.text));}
-        | quotedWord {$val = new JsonString($1.text);}
-        | ret=jsonObject {$val = new Json(ret);}
-        | {ArrayList<String> concepts = new ArrayList<>();} c2=list[concepts] {$val = new JsonList(c2);}
+jsonValue returns [JsonValue val]
+@init{
+ArrayList<String> concepts = new ArrayList<>();
+}
+:
+
+          num {$val = new JsonNum(Integer.parseInt($num.text));}
+        | quotedWord {$val = new JsonString($quotedWord.text);}
+        | ret=jsonObject {$val = new Json($ret.ret);}
+        | c2=list[concepts] {$val = new JsonList($c2.conceptsOUT);}
         ;
 
 //attention : ATTENTION;

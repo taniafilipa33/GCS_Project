@@ -1,4 +1,8 @@
-// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS\tpCGS.g4 by ANTLR 4.8
+// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.8
+
+    import java.util.HashMap;
+    import java.util.ArrayList;
+
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -36,7 +40,7 @@ public class tpCGSLexer extends Lexer {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "':'", "'['", "']'", "'{'", "','", "'}'"
+			null, "':'", "'['", "','", "']'", "'{'", "'}'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -81,6 +85,47 @@ public class tpCGSLexer extends Lexer {
 	}
 
 
+
+	  class Entity {
+	    HashMap<String, JsonValue> data;
+	  }
+
+	  interface JsonValue {}
+
+	  class JsonString implements JsonValue {
+	    String val = "";
+
+	    JsonString(String i){
+	        this.val = i;
+	       }
+	  }
+
+	  class JsonNum implements JsonValue {
+	   int val = -1;
+
+	   JsonNum(int i){
+	    this.val = i;
+	   }
+	  }
+
+	  class Json implements JsonValue {
+	    HashMap<String, JsonValue> val;
+
+	    Json (HashMap<String, JsonValue> req){
+	        this.val = req;
+	    }
+	  }
+
+	  class JsonList implements JsonValue{
+	    ArrayList<String> val;
+
+	    JsonList (ArrayList<String> req){
+	        this.val = req;
+	    }
+	  }
+
+
+
 	public tpCGSLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
@@ -120,8 +165,8 @@ public class tpCGSLexer extends Lexer {
 		"\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\3\33\3\2\2\2\5"+
 		"\35\3\2\2\2\7\37\3\2\2\2\t!\3\2\2\2\13#\3\2\2\2\r%\3\2\2\2\17\'\3\2\2"+
 		"\2\21\60\3\2\2\2\239\3\2\2\2\25D\3\2\2\2\27H\3\2\2\2\31i\3\2\2\2\33\34"+
-		"\7<\2\2\34\4\3\2\2\2\35\36\7]\2\2\36\6\3\2\2\2\37 \7_\2\2 \b\3\2\2\2!"+
-		"\"\7}\2\2\"\n\3\2\2\2#$\7.\2\2$\f\3\2\2\2%&\7\177\2\2&\16\3\2\2\2\'(\t"+
+		"\7<\2\2\34\4\3\2\2\2\35\36\7]\2\2\36\6\3\2\2\2\37 \7.\2\2 \b\3\2\2\2!"+
+		"\"\7_\2\2\"\n\3\2\2\2#$\7}\2\2$\f\3\2\2\2%&\7\177\2\2&\16\3\2\2\2\'(\t"+
 		"\2\2\2()\t\3\2\2)*\t\4\2\2*+\t\2\2\2+,\t\5\2\2,-\t\6\2\2-.\t\7\2\2./\t"+
 		"\b\2\2/\20\3\2\2\2\60\61\t\b\2\2\61\62\t\7\2\2\62\63\t\t\2\2\63\64\t\n"+
 		"\2\2\64\65\t\5\2\2\65\66\t\4\2\2\66\67\t\7\2\2\678\t\b\2\28\22\3\2\2\2"+

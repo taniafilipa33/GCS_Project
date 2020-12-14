@@ -1,4 +1,8 @@
-// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS\tpCGS.g4 by ANTLR 4.8
+// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.8
+
+    import java.util.HashMap;
+    import java.util.ArrayList;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -17,15 +21,25 @@ public interface tpCGSListener extends ParseTreeListener {
 	 */
 	void exitMain(tpCGSParser.MainContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link tpCGSParser#json}.
+	 * Enter a parse tree produced by {@link tpCGSParser#jsonList}.
 	 * @param ctx the parse tree
 	 */
-	void enterJson(tpCGSParser.JsonContext ctx);
+	void enterJsonList(tpCGSParser.JsonListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link tpCGSParser#json}.
+	 * Exit a parse tree produced by {@link tpCGSParser#jsonList}.
 	 * @param ctx the parse tree
 	 */
-	void exitJson(tpCGSParser.JsonContext ctx);
+	void exitJsonList(tpCGSParser.JsonListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link tpCGSParser#jsonObject}.
+	 * @param ctx the parse tree
+	 */
+	void enterJsonObject(tpCGSParser.JsonObjectContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link tpCGSParser#jsonObject}.
+	 * @param ctx the parse tree
+	 */
+	void exitJsonObject(tpCGSParser.JsonObjectContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link tpCGSParser#list}.
 	 * @param ctx the parse tree
@@ -36,6 +50,16 @@ public interface tpCGSListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitList(tpCGSParser.ListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link tpCGSParser#resOfL}.
+	 * @param ctx the parse tree
+	 */
+	void enterResOfL(tpCGSParser.ResOfLContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link tpCGSParser#resOfL}.
+	 * @param ctx the parse tree
+	 */
+	void exitResOfL(tpCGSParser.ResOfLContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link tpCGSParser#pairKeyValue}.
 	 * @param ctx the parse tree

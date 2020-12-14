@@ -5,13 +5,13 @@ import java.io.IOException;
 
 
 
-public class main {
+public class Main {
     public static void main(String[] args )
     {
         try {
-            stockLexer lexer = new stockLexer(CharStreams.fromFileName("teste1.txt"));
+            tpCGSLexer lexer = new tpCGSLexer(CharStreams.fromFileName("test.txt"));
             CommonTokenStream stream = new CommonTokenStream(lexer);
-            stockParser parser = new stockParser(stream);
+            tpCGSParser parser = new tpCGSParser(stream);
             parser.main();
 
         } catch (IOException e) {
