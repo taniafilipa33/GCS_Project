@@ -106,7 +106,7 @@ public class tpCGSParser extends Parser {
 	    JsonString(String i){
 	        this.val = i;
 	       }
-	    @Override
+	 @Override
 	    public String toString(){
 	        return this.val;
 	    }
@@ -211,8 +211,8 @@ public class tpCGSParser extends Parser {
 			match(T__0);
 			setState(34);
 			((MainContext)_localctx).r1 = jsonList(resources);
-			 for(Integer key : ((MainContext)_localctx).a1.genOUT.keySet())
-			                                        System.out.println(((MainContext)_localctx).a1.genOUT.get(key).data.get("name"));
+			 for(Integer key : ((MainContext)_localctx).r1.genOUT.keySet())
+			                                        System.out.println(((MainContext)_localctx).r1.genOUT.get(key).data.get("name"));
 			}
 		}
 		catch (RecognitionException re) {
@@ -280,7 +280,7 @@ public class tpCGSParser extends Parser {
 				match(T__1);
 				setState(38);
 				((JsonListContext)_localctx).g1 = jsonObject();
-				ent.data = ((JsonListContext)_localctx).g1.ret; genIN.put(i++,ent); ((JsonListContext)_localctx).genOUT = _localctx.genIN;
+				ent.data = ((JsonListContext)_localctx).g1.ret; genIN.put(i,ent); ((JsonListContext)_localctx).genOUT = _localctx.genIN; i=1;
 				setState(46);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
@@ -291,7 +291,7 @@ public class tpCGSParser extends Parser {
 					match(T__2);
 					setState(41);
 					((JsonListContext)_localctx).g2 = jsonObject();
-					 ent2.data = ((JsonListContext)_localctx).g2.ret; _localctx.genOUT.put(i++,ent2);((JsonListContext)_localctx).genOUT = genIN;
+					 ent2.data = ((JsonListContext)_localctx).g2.ret; _localctx.genOUT.put(i,ent2);((JsonListContext)_localctx).genOUT = _localctx.genIN;i=i+1; System.out.println(i);
 					}
 					}
 					setState(48);
@@ -643,7 +643,7 @@ public class tpCGSParser extends Parser {
 				{
 				setState(91);
 				((JsonValueContext)_localctx).quotedWord = quotedWord();
-				((JsonValueContext)_localctx).val =  new JsonString((((JsonValueContext)_localctx).quotedWord!=null?_input.getText(((JsonValueContext)_localctx).quotedWord.start,((JsonValueContext)_localctx).quotedWord.stop):null));
+				String p = (((JsonValueContext)_localctx).quotedWord!=null?_input.getText(((JsonValueContext)_localctx).quotedWord.start,((JsonValueContext)_localctx).quotedWord.stop):null).toString(); ((JsonValueContext)_localctx).val =  new JsonString(p);
 				}
 				break;
 			case T__4:

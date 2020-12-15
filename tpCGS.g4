@@ -18,7 +18,7 @@ grammar tpCGS;
     JsonString(String i){
         this.val = i;
        }
-    @Override
+ @Override
     public String toString(){
         return this.val;
     }
@@ -57,8 +57,8 @@ main
 :
     conc ':' c1=list[concepts]
     stu':'  a1=jsonList[students]
-    res ':' r1=jsonList[resources] { for(Integer key : $a1.genOUT.keySet())
-                                        System.out.println($a1.genOUT.get(key).data.get("name"));};
+    res ':' r1=jsonList[resources] { for(Integer key : $r1.genOUT.keySet())
+                                        System.out.println($r1.genOUT.get(key).data.get("name"));};
 
 jsonList[HashMap<Integer, Entity> genIN] returns [HashMap<Integer, Entity> genOUT]
 @init {
@@ -69,9 +69,9 @@ jsonList[HashMap<Integer, Entity> genIN] returns [HashMap<Integer, Entity> genOU
     Integer i = 0;
 }
 
-    : '[' g1=jsonObject {ent.data = $g1.ret; genIN.put(i++,ent); $genOUT=$genIN;}
-    (',' g2=jsonObject { ent2.data = $g2.ret; $genOUT.put(i++,ent2);$genOUT=genIN;})* ']'
-    
+    : '[' g1=jsonObject {ent.data = $g1.ret; genIN.put(i,ent); $genOUT=$genIN; i=1;}
+    (',' g2=jsonObject { ent2.data = $g2.ret; $genOUT.put(i,ent2);$genOUT=$genIN;i=i+1; System.out.println(i);})* ']'
+
     |
     ;
 
@@ -88,7 +88,7 @@ list[ArrayList<String> conceptsIN] returns [ArrayList<String> conceptsOUT]
          (cs2=resOfL[$conceptsOUT] {$conceptsOUT = $cs2.concOUT;} )* ']' ;
 
 resOfL[ArrayList<String> concIN] returns [ArrayList<String>concOUT]:
-        ',' qw2=quotedWord {$concIN.add($qw2.text);$concOUT = $concIN;} ; 
+        ',' qw2=quotedWord {$concIN.add($qw2.text);$concOUT = $concIN;} ;
 
 pairKeyValue[HashMap<String, JsonValue> kIN] returns [HashMap<String, JsonValue> kOUT]
 : key=word ':' vv=jsonValue
@@ -102,7 +102,7 @@ ArrayList<String> concepts = new ArrayList<>();
 :
 
           num {$val = new JsonNum(Integer.parseInt($num.text));}
-        | quotedWord {$val = new JsonString($quotedWord.text);}
+        | quotedWord {String p = $quotedWord.text.toString(); $val = new JsonString(p);}
         | ret=jsonObject {$val = new Json($ret.ret);}
         | c2=list[concepts] {$val = new JsonList($c2.conceptsOUT);}
         ;
@@ -128,7 +128,7 @@ RESOURCES: '|'[rR][eE][sS][oO][uU][rR][cC][eE][sS]'|' ;
 
 WORD : [A-Za-z][A-Za-z0-9_\-]*([ ]*[A-Za-z][A-Za-z0-9_\-]*)*;
 NUM: [0-9]+;
-QWORD : ["][A-Za-z][A-Za-z0-9_\-]*([ ]*[A-Za-z][A-Za-z0-9_\-]*)*["];
+QWORD : ["][A-Za-z][A-Za-z0-9_\-:/.%,#!]*([ ]*[A-Za-z][A-Za-z0-9_\-:/.%,#!]*)*["];
 WS: ('\r'? '\n' | ' ' | '\t')+ -> skip;
 
 
