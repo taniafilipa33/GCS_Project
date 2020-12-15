@@ -18,12 +18,15 @@ grammar tpCGS;
     JsonString(String i){
         this.val = i;
        }
-  }
-
+    @Override
+    public String toString(){
+        return this.val;
+    }
+   }
   class JsonNum implements JsonValue {
-   int val = -1;
+   Integer val = -1;
 
-   JsonNum(int i){
+   JsonNum(Integer i){
     this.val = i;
    }
   }
@@ -54,9 +57,8 @@ main
 :
     conc ':' c1=list[concepts]
     stu':'  a1=jsonList[students]
-    res ':' r1=jsonList[resources] {for(Entity entry : $a1.genOUT.values())
-                                        for(JsonValue v : entry.data.values())
-                                            System.out.println("aluno:"+v);};
+    res ':' r1=jsonList[resources] { for(Integer key : $a1.genOUT.keySet())
+                                        System.out.println($a1.genOUT.get(key).data.get("name"));};
 
 jsonList[HashMap<Integer, Entity> genIN] returns [HashMap<Integer, Entity> genOUT]
 @init {
@@ -64,10 +66,11 @@ jsonList[HashMap<Integer, Entity> genIN] returns [HashMap<Integer, Entity> genOU
     ent.data = new HashMap<>();
     Entity ent2 =  new Entity();
     ent2.data = new HashMap<>();
+    Integer i = 0;
 }
 
-    : '[' g1=jsonObject {ent.data = $g1.ret; genIN.put(((JsonNum)$g1.ret.get("id")).val,ent); $genOUT=$genIN;}
-    (',' g2=jsonObject { ent2.data = $g2.ret; $genOUT.put(((JsonNum)$g2.ret.get("id")).val,ent2);$genOUT=genIN;})* ']'
+    : '[' g1=jsonObject {ent.data = $g1.ret; genIN.put(i++,ent); $genOUT=$genIN;}
+    (',' g2=jsonObject { ent2.data = $g2.ret; $genOUT.put(i++,ent2);$genOUT=genIN;})* ']'
     
     |
     ;
@@ -88,8 +91,8 @@ resOfL[ArrayList<String> concIN] returns [ArrayList<String>concOUT]:
         ',' qw2=quotedWord {$concIN.add($qw2.text);$concOUT = $concIN;} ; 
 
 pairKeyValue[HashMap<String, JsonValue> kIN] returns [HashMap<String, JsonValue> kOUT]
-: key=quotedWord ':' vv=jsonValue
-{$kIN.put($key.text, $vv.val);$kOUT = $kIN;}
+: key=word ':' vv=jsonValue
+{$kIN.put($key.text, $vv.val);$kOUT = $kIN; }
 ;
 
 jsonValue returns [JsonValue val]
@@ -111,14 +114,24 @@ ArrayList<String> concepts = new ArrayList<>();
 //resolve : RESOLVE;
 //motivation : MOTIVATION;
 quotedWord: QWORD;
+word : WORD;
 num : NUM;
 conc : CONCEPTS;
 stu : STUDENTS;
 res : RESOURCES;
 //LEXER
-CONCEPTS : [Cc][oO][nN][cC][eE][pP][tT][sS];
-STUDENTS : [Ss][Tt][uU][dD][eE][nN][tT][sS];
-RESOURCES : [rR][eE][sS][oO][uU][rR][cC][eE][sS];
+
+CONCEPTS: '|'[Cc][oO][nN][cC][eE][pP][tT][sS]'|' ;
+STUDENTS: '|'[Ss][Tt][uU][dD][eE][nN][tT][sS]'|' ;
+RESOURCES: '|'[rR][eE][sS][oO][uU][rR][cC][eE][sS]'|' ;
+
+
+WORD : [A-Za-z][A-Za-z0-9_\-]*([ ]*[A-Za-z][A-Za-z0-9_\-]*)*;
+NUM: [0-9]+;
+QWORD : ["][A-Za-z][A-Za-z0-9_\-]*([ ]*[A-Za-z][A-Za-z0-9_\-]*)*["];
+WS: ('\r'? '\n' | ' ' | '\t')+ -> skip;
+
+
 
 //ATTENTION : ["][Aa][Tt][Ee][Nn][Tt][Ii][Oo][Nn]["];
 //SELFLEARNING : ["][Ss][Ee][Ll][Ff][\-][Ll][Ee][Aa][Rr][Nn][Ii][Nn][Gg]["];
@@ -126,7 +139,3 @@ RESOURCES : [rR][eE][sS][oO][uU][rR][cC][eE][sS];
 //RESOLVE : ["][Rr][Ee][Ss][Oo][Ll][Vv][Ee]["];
 //MOTIVATION : ["][Mm][Oo][Tt][Ii][Vv][Aa][Tt][Ii][Oo][Nn]["];
 //DEDUCTION:["][Dd][Ee][Dd][Uu][Cc][Tt][Ii][Oo][Nn]["];
-
-NUM: [0-9]+;
-QWORD : ["][A-Za-z][A-Za-z0-9_\-]*([ ]*[A-Za-z][A-Za-z0-9_\-]*)*["];
-WS: ('\r'? '\n' | ' ' | '\t')+ -> skip;

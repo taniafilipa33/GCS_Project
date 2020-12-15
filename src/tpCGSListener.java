@@ -1,4 +1,4 @@
-// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.8
+// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.9
 
     import java.util.HashMap;
     import java.util.ArrayList;
@@ -90,6 +90,16 @@ public interface tpCGSListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitQuotedWord(tpCGSParser.QuotedWordContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link tpCGSParser#word}.
+	 * @param ctx the parse tree
+	 */
+	void enterWord(tpCGSParser.WordContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link tpCGSParser#word}.
+	 * @param ctx the parse tree
+	 */
+	void exitWord(tpCGSParser.WordContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link tpCGSParser#num}.
 	 * @param ctx the parse tree

@@ -1,4 +1,4 @@
-// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.8
+// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.9
 
     import java.util.HashMap;
     import java.util.ArrayList;
@@ -14,14 +14,14 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class tpCGSLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, CONCEPTS=7, STUDENTS=8, 
-		RESOURCES=9, NUM=10, QWORD=11, WS=12;
+		RESOURCES=9, WORD=10, NUM=11, QWORD=12, WS=13;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -33,7 +33,7 @@ public class tpCGSLexer extends Lexer {
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "CONCEPTS", "STUDENTS", 
-			"RESOURCES", "NUM", "QWORD", "WS"
+			"RESOURCES", "WORD", "NUM", "QWORD", "WS"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -47,7 +47,7 @@ public class tpCGSLexer extends Lexer {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, "CONCEPTS", "STUDENTS", "RESOURCES", 
-			"NUM", "QWORD", "WS"
+			"WORD", "NUM", "QWORD", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -98,12 +98,15 @@ public class tpCGSLexer extends Lexer {
 	    JsonString(String i){
 	        this.val = i;
 	       }
-	  }
-
+	    @Override
+	    public String toString(){
+	        return this.val;
+	    }
+	   }
 	  class JsonNum implements JsonValue {
-	   int val = -1;
+	   Integer val = -1;
 
-	   JsonNum(int i){
+	   JsonNum(Integer i){
 	    this.val = i;
 	   }
 	  }
@@ -150,36 +153,48 @@ public class tpCGSLexer extends Lexer {
 	public ATN getATN() { return _ATN; }
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\16o\b\1\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\3\6\3\6\3\7\3\7\3"+
-		"\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t"+
-		"\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\13\6\13E\n\13\r\13\16\13F\3"+
-		"\f\3\f\3\f\7\fL\n\f\f\f\16\fO\13\f\3\f\7\fR\n\f\f\f\16\fU\13\f\3\f\3\f"+
-		"\7\fY\n\f\f\f\16\f\\\13\f\7\f^\n\f\f\f\16\fa\13\f\3\f\3\f\3\r\5\rf\n\r"+
-		"\3\r\3\r\6\rj\n\r\r\r\16\rk\3\r\3\r\2\2\16\3\3\5\4\7\5\t\6\13\7\r\b\17"+
-		"\t\21\n\23\13\25\f\27\r\31\16\3\2\22\4\2EEee\4\2QQqq\4\2PPpp\4\2GGgg\4"+
-		"\2RRrr\4\2VVvv\4\2UUuu\4\2WWww\4\2FFff\4\2TTtt\3\2\62;\3\2$$\4\2C\\c|"+
-		"\7\2//\62;C\\aac|\3\2\"\"\4\2\13\13\"\"\2v\2\3\3\2\2\2\2\5\3\2\2\2\2\7"+
-		"\3\2\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2"+
-		"\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\3\33\3\2\2\2\5"+
-		"\35\3\2\2\2\7\37\3\2\2\2\t!\3\2\2\2\13#\3\2\2\2\r%\3\2\2\2\17\'\3\2\2"+
-		"\2\21\60\3\2\2\2\239\3\2\2\2\25D\3\2\2\2\27H\3\2\2\2\31i\3\2\2\2\33\34"+
-		"\7<\2\2\34\4\3\2\2\2\35\36\7]\2\2\36\6\3\2\2\2\37 \7.\2\2 \b\3\2\2\2!"+
-		"\"\7_\2\2\"\n\3\2\2\2#$\7}\2\2$\f\3\2\2\2%&\7\177\2\2&\16\3\2\2\2\'(\t"+
-		"\2\2\2()\t\3\2\2)*\t\4\2\2*+\t\2\2\2+,\t\5\2\2,-\t\6\2\2-.\t\7\2\2./\t"+
-		"\b\2\2/\20\3\2\2\2\60\61\t\b\2\2\61\62\t\7\2\2\62\63\t\t\2\2\63\64\t\n"+
-		"\2\2\64\65\t\5\2\2\65\66\t\4\2\2\66\67\t\7\2\2\678\t\b\2\28\22\3\2\2\2"+
-		"9:\t\13\2\2:;\t\5\2\2;<\t\b\2\2<=\t\3\2\2=>\t\t\2\2>?\t\13\2\2?@\t\2\2"+
-		"\2@A\t\5\2\2AB\t\b\2\2B\24\3\2\2\2CE\t\f\2\2DC\3\2\2\2EF\3\2\2\2FD\3\2"+
-		"\2\2FG\3\2\2\2G\26\3\2\2\2HI\t\r\2\2IM\t\16\2\2JL\t\17\2\2KJ\3\2\2\2L"+
-		"O\3\2\2\2MK\3\2\2\2MN\3\2\2\2N_\3\2\2\2OM\3\2\2\2PR\t\20\2\2QP\3\2\2\2"+
-		"RU\3\2\2\2SQ\3\2\2\2ST\3\2\2\2TV\3\2\2\2US\3\2\2\2VZ\t\16\2\2WY\t\17\2"+
-		"\2XW\3\2\2\2Y\\\3\2\2\2ZX\3\2\2\2Z[\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2]S\3\2"+
-		"\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2\2\2`b\3\2\2\2a_\3\2\2\2bc\t\r\2\2c\30\3"+
-		"\2\2\2df\7\17\2\2ed\3\2\2\2ef\3\2\2\2fg\3\2\2\2gj\7\f\2\2hj\t\21\2\2i"+
-		"e\3\2\2\2ih\3\2\2\2jk\3\2\2\2ki\3\2\2\2kl\3\2\2\2lm\3\2\2\2mn\b\r\2\2"+
-		"n\32\3\2\2\2\13\2FMSZ_eik\3\b\2\2";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\17\u0090\b\1\4\2"+
+		"\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4"+
+		"\13\t\13\4\f\t\f\4\r\t\r\4\16\t\16\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\3\6"+
+		"\3\6\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3"+
+		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n"+
+		"\3\n\3\n\3\13\3\13\7\13N\n\13\f\13\16\13Q\13\13\3\13\7\13T\n\13\f\13\16"+
+		"\13W\13\13\3\13\3\13\7\13[\n\13\f\13\16\13^\13\13\7\13`\n\13\f\13\16\13"+
+		"c\13\13\3\f\6\ff\n\f\r\f\16\fg\3\r\3\r\3\r\7\rm\n\r\f\r\16\rp\13\r\3\r"+
+		"\7\rs\n\r\f\r\16\rv\13\r\3\r\3\r\7\rz\n\r\f\r\16\r}\13\r\7\r\177\n\r\f"+
+		"\r\16\r\u0082\13\r\3\r\3\r\3\16\5\16\u0087\n\16\3\16\3\16\6\16\u008b\n"+
+		"\16\r\16\16\16\u008c\3\16\3\16\2\2\17\3\3\5\4\7\5\t\6\13\7\r\b\17\t\21"+
+		"\n\23\13\25\f\27\r\31\16\33\17\3\2\22\4\2EEee\4\2QQqq\4\2PPpp\4\2GGgg"+
+		"\4\2RRrr\4\2VVvv\4\2UUuu\4\2WWww\4\2FFff\4\2TTtt\4\2C\\c|\7\2//\62;C\\"+
+		"aac|\3\2\"\"\3\2\62;\3\2$$\4\2\13\13\"\"\2\u009b\2\3\3\2\2\2\2\5\3\2\2"+
+		"\2\2\7\3\2\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2\2\2\21"+
+		"\3\2\2\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\2\33\3\2"+
+		"\2\2\3\35\3\2\2\2\5\37\3\2\2\2\7!\3\2\2\2\t#\3\2\2\2\13%\3\2\2\2\r\'\3"+
+		"\2\2\2\17)\3\2\2\2\21\64\3\2\2\2\23?\3\2\2\2\25K\3\2\2\2\27e\3\2\2\2\31"+
+		"i\3\2\2\2\33\u008a\3\2\2\2\35\36\7<\2\2\36\4\3\2\2\2\37 \7]\2\2 \6\3\2"+
+		"\2\2!\"\7.\2\2\"\b\3\2\2\2#$\7_\2\2$\n\3\2\2\2%&\7}\2\2&\f\3\2\2\2\'("+
+		"\7\177\2\2(\16\3\2\2\2)*\7~\2\2*+\t\2\2\2+,\t\3\2\2,-\t\4\2\2-.\t\2\2"+
+		"\2./\t\5\2\2/\60\t\6\2\2\60\61\t\7\2\2\61\62\t\b\2\2\62\63\7~\2\2\63\20"+
+		"\3\2\2\2\64\65\7~\2\2\65\66\t\b\2\2\66\67\t\7\2\2\678\t\t\2\289\t\n\2"+
+		"\29:\t\5\2\2:;\t\4\2\2;<\t\7\2\2<=\t\b\2\2=>\7~\2\2>\22\3\2\2\2?@\7~\2"+
+		"\2@A\t\13\2\2AB\t\5\2\2BC\t\b\2\2CD\t\3\2\2DE\t\t\2\2EF\t\13\2\2FG\t\2"+
+		"\2\2GH\t\5\2\2HI\t\b\2\2IJ\7~\2\2J\24\3\2\2\2KO\t\f\2\2LN\t\r\2\2ML\3"+
+		"\2\2\2NQ\3\2\2\2OM\3\2\2\2OP\3\2\2\2Pa\3\2\2\2QO\3\2\2\2RT\t\16\2\2SR"+
+		"\3\2\2\2TW\3\2\2\2US\3\2\2\2UV\3\2\2\2VX\3\2\2\2WU\3\2\2\2X\\\t\f\2\2"+
+		"Y[\t\r\2\2ZY\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2]`\3\2\2\2^\\\3\2"+
+		"\2\2_U\3\2\2\2`c\3\2\2\2a_\3\2\2\2ab\3\2\2\2b\26\3\2\2\2ca\3\2\2\2df\t"+
+		"\17\2\2ed\3\2\2\2fg\3\2\2\2ge\3\2\2\2gh\3\2\2\2h\30\3\2\2\2ij\t\20\2\2"+
+		"jn\t\f\2\2km\t\r\2\2lk\3\2\2\2mp\3\2\2\2nl\3\2\2\2no\3\2\2\2o\u0080\3"+
+		"\2\2\2pn\3\2\2\2qs\t\16\2\2rq\3\2\2\2sv\3\2\2\2tr\3\2\2\2tu\3\2\2\2uw"+
+		"\3\2\2\2vt\3\2\2\2w{\t\f\2\2xz\t\r\2\2yx\3\2\2\2z}\3\2\2\2{y\3\2\2\2{"+
+		"|\3\2\2\2|\177\3\2\2\2}{\3\2\2\2~t\3\2\2\2\177\u0082\3\2\2\2\u0080~\3"+
+		"\2\2\2\u0080\u0081\3\2\2\2\u0081\u0083\3\2\2\2\u0082\u0080\3\2\2\2\u0083"+
+		"\u0084\t\20\2\2\u0084\32\3\2\2\2\u0085\u0087\7\17\2\2\u0086\u0085\3\2"+
+		"\2\2\u0086\u0087\3\2\2\2\u0087\u0088\3\2\2\2\u0088\u008b\7\f\2\2\u0089"+
+		"\u008b\t\21\2\2\u008a\u0086\3\2\2\2\u008a\u0089\3\2\2\2\u008b\u008c\3"+
+		"\2\2\2\u008c\u008a\3\2\2\2\u008c\u008d\3\2\2\2\u008d\u008e\3\2\2\2\u008e"+
+		"\u008f\b\16\2\2\u008f\34\3\2\2\2\17\2OU\\agnt{\u0080\u0086\u008a\u008c"+
+		"\3\b\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

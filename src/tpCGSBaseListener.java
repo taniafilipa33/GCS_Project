@@ -1,4 +1,4 @@
-// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.8
+// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.9
 
     import java.util.HashMap;
     import java.util.ArrayList;
@@ -110,6 +110,18 @@ public class tpCGSBaseListener implements tpCGSListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitQuotedWord(tpCGSParser.QuotedWordContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWord(tpCGSParser.WordContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWord(tpCGSParser.WordContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,4 +1,4 @@
-// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.8
+// Generated from C:/Users/comta/OneDrive/Ambiente de Trabalho/4ano/TPGCS/GCS_Project\tpCGS.g4 by ANTLR 4.9
 
     import java.util.HashMap;
     import java.util.ArrayList;
@@ -61,6 +61,12 @@ public interface tpCGSVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitQuotedWord(tpCGSParser.QuotedWordContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link tpCGSParser#word}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWord(tpCGSParser.WordContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link tpCGSParser#num}.
 	 * @param ctx the parse tree
