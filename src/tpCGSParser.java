@@ -184,8 +184,8 @@ public class tpCGSParser extends Parser {
 		enterRule(_localctx, 0, RULE_main);
 
 		    ArrayList<String> concepts = new ArrayList<>();
-		    ArrayList<HashMap<Integer, Entity>> students = new ArrayList<>();
-		    ArrayList<HashMap<Integer, Entity>> resources = new ArrayList<>();
+		    HashMap<Integer, Entity> students =  new HashMap<>();
+		    HashMap<Integer, Entity> resources =  new HashMap<>();
 
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -208,6 +208,9 @@ public class tpCGSParser extends Parser {
 			match(T__0);
 			setState(32);
 			((MainContext)_localctx).r1 = jsonList(resources);
+			for(Entity entry : ((MainContext)_localctx).a1.genOUT.values())
+			                                        for(JsonValue v : entry.data.values())
+			                                            System.out.println("aluno:"+v);
 			}
 		}
 		catch (RecognitionException re) {
@@ -222,8 +225,8 @@ public class tpCGSParser extends Parser {
 	}
 
 	public static class JsonListContext extends ParserRuleContext {
-		public ArrayList<HashMap<Integer, Entity>> genIN;
-		public ArrayList<HashMap<Integer, Entity>> genOUT;
+		public HashMap<Integer, Entity> genIN;
+		public HashMap<Integer, Entity> genOUT;
 		public JsonObjectContext g1;
 		public JsonObjectContext g2;
 		public List<JsonObjectContext> jsonObject() {
@@ -233,7 +236,7 @@ public class tpCGSParser extends Parser {
 			return getRuleContext(JsonObjectContext.class,i);
 		}
 		public JsonListContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
-		public JsonListContext(ParserRuleContext parent, int invokingState, ArrayList<HashMap<Integer, Entity>> genIN) {
+		public JsonListContext(ParserRuleContext parent, int invokingState, HashMap<Integer, Entity> genIN) {
 			super(parent, invokingState);
 			this.genIN = genIN;
 		}
@@ -253,7 +256,7 @@ public class tpCGSParser extends Parser {
 		}
 	}
 
-	public final JsonListContext jsonList(ArrayList<HashMap<Integer, Entity>> genIN) throws RecognitionException {
+	public final JsonListContext jsonList(HashMap<Integer, Entity> genIN) throws RecognitionException {
 		JsonListContext _localctx = new JsonListContext(_ctx, getState(), genIN);
 		enterRule(_localctx, 2, RULE_jsonList);
 
@@ -261,8 +264,6 @@ public class tpCGSParser extends Parser {
 		    ent.data = new HashMap<>();
 		    Entity ent2 =  new Entity();
 		    ent2.data = new HashMap<>();
-		    HashMap<Integer,Entity> add = new HashMap<>();
-		    int i = 0;
 
 		int _la;
 		try {
@@ -272,31 +273,30 @@ public class tpCGSParser extends Parser {
 			case T__1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(34);
-				match(T__1);
 				setState(35);
+				match(T__1);
+				setState(36);
 				((JsonListContext)_localctx).g1 = jsonObject();
-				ent.data = ((JsonListContext)_localctx).g1.ret; add.put(i,ent);
-				setState(43);
+				ent.data = ((JsonListContext)_localctx).g1.ret; genIN.put(((JsonNum)((JsonListContext)_localctx).g1.ret.get("id")).val,ent); ((JsonListContext)_localctx).genOUT = _localctx.genIN;
+				setState(44);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__2) {
 					{
 					{
-					setState(37);
-					match(T__2);
 					setState(38);
+					match(T__2);
+					setState(39);
 					((JsonListContext)_localctx).g2 = jsonObject();
-					 ent2.data = ((JsonListContext)_localctx).g2.ret; add.put(i,ent2); i= i+1;
+					 ent2.data = ((JsonListContext)_localctx).g2.ret; _localctx.genOUT.put(((JsonNum)((JsonListContext)_localctx).g2.ret.get("id")).val,ent2);((JsonListContext)_localctx).genOUT = genIN;
 					}
 					}
-					setState(45);
+					setState(46);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(46);
+				setState(47);
 				match(T__3);
-				 _localctx.genIN.add(add); ((JsonListContext)_localctx).genOUT = genIN;
 				}
 				break;
 			case EOF:
@@ -887,29 +887,29 @@ public class tpCGSParser extends Parser {
 	public static final String _serializedATN =
 		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16q\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
-		"\f\t\f\4\r\t\r\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\7\3,\n\3\f\3\16\3/\13\3\3\3\3\3\3\3\3\3\5\3\65\n\3\3\4\3"+
-		"\4\3\4\3\4\7\4;\n\4\f\4\16\4>\13\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5"+
-		"\7\5I\n\5\f\5\16\5L\13\5\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3"+
-		"\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\be\n\b\3\t\3\t\3\n\3"+
-		"\n\3\13\3\13\3\f\3\f\3\r\3\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30"+
+		"\f\t\f\4\r\t\r\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3"+
+		"\3\3\3\3\3\3\3\3\7\3-\n\3\f\3\16\3\60\13\3\3\3\3\3\3\3\5\3\65\n\3\3\4"+
+		"\3\4\3\4\3\4\7\4;\n\4\f\4\16\4>\13\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3"+
+		"\5\7\5I\n\5\f\5\16\5L\13\5\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7"+
+		"\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\be\n\b\3\t\3\t\3\n"+
+		"\3\n\3\13\3\13\3\f\3\f\3\r\3\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30"+
 		"\2\2\2k\2\32\3\2\2\2\4\64\3\2\2\2\6\66\3\2\2\2\bB\3\2\2\2\nO\3\2\2\2\f"+
 		"S\3\2\2\2\16d\3\2\2\2\20f\3\2\2\2\22h\3\2\2\2\24j\3\2\2\2\26l\3\2\2\2"+
 		"\30n\3\2\2\2\32\33\5\24\13\2\33\34\7\3\2\2\34\35\5\b\5\2\35\36\5\26\f"+
-		"\2\36\37\7\3\2\2\37 \5\4\3\2 !\5\30\r\2!\"\7\3\2\2\"#\5\4\3\2#\3\3\2\2"+
-		"\2$%\7\4\2\2%&\5\6\4\2&-\b\3\1\2\'(\7\5\2\2()\5\6\4\2)*\b\3\1\2*,\3\2"+
-		"\2\2+\'\3\2\2\2,/\3\2\2\2-+\3\2\2\2-.\3\2\2\2.\60\3\2\2\2/-\3\2\2\2\60"+
-		"\61\7\6\2\2\61\62\b\3\1\2\62\65\3\2\2\2\63\65\3\2\2\2\64$\3\2\2\2\64\63"+
-		"\3\2\2\2\65\5\3\2\2\2\66\67\7\7\2\2\67<\5\f\7\289\7\5\2\29;\5\f\7\2:8"+
-		"\3\2\2\2;>\3\2\2\2<:\3\2\2\2<=\3\2\2\2=?\3\2\2\2><\3\2\2\2?@\7\b\2\2@"+
-		"A\b\4\1\2A\7\3\2\2\2BC\7\4\2\2CD\5\20\t\2DJ\b\5\1\2EF\5\n\6\2FG\b\5\1"+
+		"\2\36\37\7\3\2\2\37 \5\4\3\2 !\5\30\r\2!\"\7\3\2\2\"#\5\4\3\2#$\b\2\1"+
+		"\2$\3\3\2\2\2%&\7\4\2\2&\'\5\6\4\2\'.\b\3\1\2()\7\5\2\2)*\5\6\4\2*+\b"+
+		"\3\1\2+-\3\2\2\2,(\3\2\2\2-\60\3\2\2\2.,\3\2\2\2./\3\2\2\2/\61\3\2\2\2"+
+		"\60.\3\2\2\2\61\62\7\6\2\2\62\65\3\2\2\2\63\65\3\2\2\2\64%\3\2\2\2\64"+
+		"\63\3\2\2\2\65\5\3\2\2\2\66\67\7\7\2\2\67<\5\f\7\289\7\5\2\29;\5\f\7\2"+
+		":8\3\2\2\2;>\3\2\2\2<:\3\2\2\2<=\3\2\2\2=?\3\2\2\2><\3\2\2\2?@\7\b\2\2"+
+		"@A\b\4\1\2A\7\3\2\2\2BC\7\4\2\2CD\5\20\t\2DJ\b\5\1\2EF\5\n\6\2FG\b\5\1"+
 		"\2GI\3\2\2\2HE\3\2\2\2IL\3\2\2\2JH\3\2\2\2JK\3\2\2\2KM\3\2\2\2LJ\3\2\2"+
 		"\2MN\7\6\2\2N\t\3\2\2\2OP\7\5\2\2PQ\5\20\t\2QR\b\6\1\2R\13\3\2\2\2ST\5"+
 		"\20\t\2TU\7\3\2\2UV\5\16\b\2VW\b\7\1\2W\r\3\2\2\2XY\5\22\n\2YZ\b\b\1\2"+
 		"Ze\3\2\2\2[\\\5\20\t\2\\]\b\b\1\2]e\3\2\2\2^_\5\6\4\2_`\b\b\1\2`e\3\2"+
 		"\2\2ab\5\b\5\2bc\b\b\1\2ce\3\2\2\2dX\3\2\2\2d[\3\2\2\2d^\3\2\2\2da\3\2"+
 		"\2\2e\17\3\2\2\2fg\7\r\2\2g\21\3\2\2\2hi\7\f\2\2i\23\3\2\2\2jk\7\t\2\2"+
-		"k\25\3\2\2\2lm\7\n\2\2m\27\3\2\2\2no\7\13\2\2o\31\3\2\2\2\7-\64<Jd";
+		"k\25\3\2\2\2lm\7\n\2\2m\27\3\2\2\2no\7\13\2\2o\31\3\2\2\2\7.\64<Jd";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

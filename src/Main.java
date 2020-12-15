@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args )
     {
         try {
-            tpCGSLexer lexer = new tpCGSLexer(CharStreams.fromFileName("test.txt"));
+            tpCGSLexer lexer = new tpCGSLexer(CharStreams.fromFileName("GCS_Project/src/test.txt"));
             CommonTokenStream stream = new CommonTokenStream(lexer);
             tpCGSParser parser = new tpCGSParser(stream);
             parser.main();

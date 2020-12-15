@@ -48,25 +48,26 @@ grammar tpCGS;
 main
 @init {
     ArrayList<String> concepts = new ArrayList<>();
-    ArrayList<HashMap<Integer, Entity>> students = new ArrayList<>();
-    ArrayList<HashMap<Integer, Entity>> resources = new ArrayList<>();
+    HashMap<Integer, Entity> students =  new HashMap<>();
+    HashMap<Integer, Entity> resources =  new HashMap<>();
 }
 :
     conc ':' c1=list[concepts]
     stu':'  a1=jsonList[students]
-    res ':' r1=jsonList[resources] ;
+    res ':' r1=jsonList[resources] {for(Entity entry : $a1.genOUT.values())
+                                        for(JsonValue v : entry.data.values())
+                                            System.out.println("aluno:"+v);};
 
-jsonList[ArrayList<HashMap<Integer, Entity>> genIN] returns [ArrayList<HashMap<Integer, Entity>> genOUT]
+jsonList[HashMap<Integer, Entity> genIN] returns [HashMap<Integer, Entity> genOUT]
 @init {
     Entity ent = new Entity();
     ent.data = new HashMap<>();
     Entity ent2 =  new Entity();
     ent2.data = new HashMap<>();
-    HashMap<Integer,Entity> add = new HashMap<>();
-    int i = 0;
 }
 
-    : '[' g1=jsonObject {ent.data = $g1.ret; add.put(i,ent);}(',' g2=jsonObject { ent2.data = $g2.ret; add.put(i,ent2); i= i+1;})* ']' { $genIN.add(add); $genOUT=genIN;}
+    : '[' g1=jsonObject {ent.data = $g1.ret; genIN.put(((JsonNum)$g1.ret.get("id")).val,ent); $genOUT=$genIN;}
+    (',' g2=jsonObject { ent2.data = $g2.ret; $genOUT.put(((JsonNum)$g2.ret.get("id")).val,ent2);$genOUT=genIN;})* ']'
     
     |
     ;
