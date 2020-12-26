@@ -3,6 +3,7 @@
     import java.util.HashMap;
     import java.util.ArrayList;
 
+
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -83,50 +84,6 @@ public class tpCGSLexer extends Lexer {
 	public Vocabulary getVocabulary() {
 		return VOCABULARY;
 	}
-
-
-
-	  class Entity {
-	    HashMap<String, JsonValue> data;
-	  }
-
-	  interface JsonValue {}
-
-	  class JsonString implements JsonValue {
-	    String val = "";
-
-	    JsonString(String i){
-	        this.val = i;
-	       }
-	 @Override
-	    public String toString(){
-	        return this.val;
-	    }
-	   }
-	  class JsonNum implements JsonValue {
-	   Integer val = -1;
-
-	   JsonNum(Integer i){
-	    this.val = i;
-	   }
-	  }
-
-	  class Json implements JsonValue {
-	    HashMap<String, JsonValue> val;
-
-	    Json (HashMap<String, JsonValue> req){
-	        this.val = req;
-	    }
-	  }
-
-	  class JsonList implements JsonValue{
-	    ArrayList<String> val;
-
-	    JsonList (ArrayList<String> req){
-	        this.val = req;
-	    }
-	  }
-
 
 
 	public tpCGSLexer(CharStream input) {

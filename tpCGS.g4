@@ -3,51 +3,9 @@ grammar tpCGS;
 @header{
     import java.util.HashMap;
     import java.util.ArrayList;
-}
-@members{
-
-  class Entity {
-    HashMap<String, JsonValue> data;
-  }
-
-  interface JsonValue {}
-
-  class JsonString implements JsonValue {
-    String val = "";
-
-    JsonString(String i){
-        this.val = i;
-       }
- @Override
-    public String toString(){
-        return this.val;
-    }
-   }
-  class JsonNum implements JsonValue {
-   Integer val = -1;
-
-   JsonNum(Integer i){
-    this.val = i;
-   }
-  }
-
-  class Json implements JsonValue {
-    HashMap<String, JsonValue> val;
-
-    Json (HashMap<String, JsonValue> req){
-        this.val = req;
-    }
-  }
-
-  class JsonList implements JsonValue{
-    ArrayList<String> val;
-
-    JsonList (ArrayList<String> req){
-        this.val = req;
-    }
-  }
 
 }
+
 main
 @init {
     ArrayList<String> concepts = new ArrayList<>();
@@ -57,20 +15,20 @@ main
 :
     conc ':' c1=list[concepts]
     stu':'  a1=jsonList[students]
-    res ':' r1=jsonList[resources] { for(Integer key : $r1.genOUT.keySet())
-                                        System.out.println($r1.genOUT.get(key).data.get("name"));};
+    res ':' r1=jsonList[resources] { //for(Integer key : $r1.genOUT.keySet())
+                                        //System.out.println($r1.genOUT.get(key).data.get("name"));
+                                        View v = new View($c1.conceptsOUT,$a1.genOUT,$r1.genOUT);};
 
 jsonList[HashMap<Integer, Entity> genIN] returns [HashMap<Integer, Entity> genOUT]
 @init {
     Entity ent = new Entity();
     ent.data = new HashMap<>();
-    Entity ent2 =  new Entity();
-    ent2.data = new HashMap<>();
     Integer i = 0;
 }
 
     : '[' g1=jsonObject {ent.data = $g1.ret; genIN.put(i,ent); $genOUT=$genIN; i=1;}
-    (',' g2=jsonObject { ent2.data = $g2.ret; $genOUT.put(i,ent2);$genOUT=$genIN;i=i+1; System.out.println(i);})* ']'
+    (',' g2=jsonObject { Entity ent2 =  new Entity();
+                        ent2.data = $g2.ret; $genOUT.put(i,ent2);$genOUT=$genIN;i=i+1;})* ']'
 
     |
     ;

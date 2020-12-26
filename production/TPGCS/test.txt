@@ -1,0 +1,36 @@
+|CONCEPTS|: [ "pensamento Critico" , "desenvolvimento Web" , "pensamento Funcional" ]
+|STUDENTS| : [ {
+	name : "Gabriel",
+	characteristics : {
+		attention: 20,
+    	self-learning: 39,
+    	resolve: 40,
+    	deduction : 70,
+    	motivation: 60,
+        time_management : 5
+        }
+    },
+    {
+    	name: "Gabriel",
+	characteristics : {
+		attention: 20,
+    	self-learning: 39,
+    	resolve: 40,
+    	deduction : 70,
+    	motivation: 60,
+        time_management : 5
+        }
+} ]
+
+|RESOURCES|: [ {
+	name: "Ficha de PRI",
+	concepts: ["pensamento Funcional","desenvolvimento Web"] ,
+	characteristics : {
+		attention: 20,
+    	self-learning: 39,
+    	resolve: 40,
+    	deduction : 70,
+    	motivation: 60,
+        time_management : 5
+        }
+}]

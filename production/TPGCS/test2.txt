@@ -1,0 +1,1044 @@
+
+|CONCEPTS|: ["Web Developing","Critical Thinking","Problem Solving", "Code Structure"]
+
+|STUDENTS|:
+	[
+		{
+			name: "Shannah",
+			characteristics: {
+				attention: 70,
+				self_learning: 84,
+				resolve: 62,
+				deduction: 74,
+				motivation: 25,
+				time_management: 38
+			}
+		},
+		{
+			name: "Arabel",
+			characteristics: {
+				attention: 19,
+				self_learning: 65,
+				resolve: 95,
+				deduction: 71,
+				motivation: 69,
+				time_management: 35
+			}
+		},
+		{
+			name: "Minne",
+			characteristics: {
+				attention: 94,
+				self_learning: 18,
+				resolve: 14,
+				deduction: 14,
+				motivation: 62,
+				time_management: 73
+			}
+		},
+		{
+			name: "Mariele",
+			characteristics: {
+				attention: 18,
+				self_learning: 20,
+				resolve: 38,
+				deduction: 22,
+				motivation: 58,
+				time_management: 44
+			}
+		},
+		{
+			name: "Blinni",
+			characteristics: {
+				attention: 91,
+				self_learning: 48,
+				resolve: 63,
+				deduction: 37,
+				motivation: 63,
+				time_management: 48
+			}
+		},
+		{
+			name: "Arlina",
+			characteristics: {
+				attention: 43,
+				self_learning: 81,
+				resolve: 81,
+				deduction: 56,
+				motivation: 91,
+				time_management: 67
+			}
+		},
+		{
+			name: "Anthia",
+			characteristics: {
+				attention: 32,
+				self_learning: 65,
+				resolve: 86,
+				deduction: 65,
+				motivation: 14,
+				time_management: 83
+			}
+		},
+		{
+			name: "Rozele",
+			characteristics: {
+				attention: 16,
+				self_learning: 46,
+				resolve: 29,
+				deduction: 18,
+				motivation: 29,
+				time_management: 21
+			}
+		},
+		{
+			name: "Tilly",
+			characteristics: {
+				attention: 64,
+				self_learning: 19,
+				resolve: 12,
+				deduction: 61,
+				motivation: 41,
+				time_management: 21
+			}
+		},
+		{
+			name: "Dennie",
+			characteristics: {
+				attention: 20,
+				self_learning: 51,
+				resolve: 11,
+				deduction: 70,
+				motivation: 63,
+				time_management: 60
+			}
+		},
+		{
+			name: "Micheline",
+			characteristics: {
+				attention: 93,
+				self_learning: 33,
+				resolve: 50,
+				deduction: 82,
+				motivation: 40,
+				time_management: 27
+			}
+		},
+		{
+			name: "Andeee",
+			characteristics: {
+				attention: 15,
+				self_learning: 48,
+				resolve: 28,
+				deduction: 62,
+				motivation: 34,
+				time_management: 78
+			}
+		},
+		{
+			name: "Fernande",
+			characteristics: {
+				attention: 61,
+				self_learning: 31,
+				resolve: 11,
+				deduction: 29,
+				motivation: 68,
+				time_management: 12
+			}
+		},
+		{
+			name: "Karly",
+			characteristics: {
+				attention: 90,
+				self_learning: 27,
+				resolve: 30,
+				deduction: 18,
+				motivation: 60,
+				time_management: 56
+			}
+		},
+		{
+			name: "Corene",
+			characteristics: {
+				attention: 51,
+				self_learning: 67,
+				resolve: 51,
+				deduction: 62,
+				motivation: 73,
+				time_management: 93
+			}
+		},
+		{
+			name: "Ericka",
+			characteristics: {
+				attention: 33,
+				self_learning: 38,
+				resolve: 80,
+				deduction: 36,
+				motivation: 90,
+				time_management: 86
+			}
+		},
+		{
+			name: "Eve",
+			characteristics: {
+				attention: 42,
+				self_learning: 80,
+				resolve: 40,
+				deduction: 31,
+				motivation: 22,
+				time_management: 17
+			}
+		},
+		{
+			name: "Ashlee",
+			characteristics: {
+				attention: 16,
+				self_learning: 91,
+				resolve: 59,
+				deduction: 67,
+				motivation: 25,
+				time_management: 38
+			}
+		},
+		{
+			name: "Willetta",
+			characteristics: {
+				attention: 63,
+				self_learning: 51,
+				resolve: 19,
+				deduction: 16,
+				motivation: 92,
+				time_management: 59
+			}
+		},
+		{
+			name: "Lanna",
+			characteristics: {
+				attention: 77,
+				self_learning: 16,
+				resolve: 57,
+				deduction: 41,
+				motivation: 65,
+				time_management: 91
+			}
+		},
+		{
+			name: "Britte",
+			characteristics: {
+				attention: 12,
+				self_learning: 51,
+				resolve: 26,
+				deduction: 49,
+				motivation: 41,
+				time_management: 52
+			}
+		},
+		{
+			name: "Lisette",
+			characteristics: {
+				attention: 56,
+				self_learning: 55,
+				resolve: 40,
+				deduction: 21,
+				motivation: 51,
+				time_management: 16
+			}
+		},
+		{
+			name: "Alyssa",
+			characteristics: {
+				attention: 72,
+				self_learning: 54,
+				resolve: 62,
+				deduction: 19,
+				motivation: 68,
+				time_management: 50
+			}
+		},
+		{
+			name: "Maye",
+			characteristics: {
+				attention: 53,
+				self_learning: 83,
+				resolve: 93,
+				deduction: 42,
+				motivation: 89,
+				time_management: 41
+			}
+		},
+		{
+			name: "Latisha",
+			characteristics: {
+				attention: 66,
+				self_learning: 26,
+				resolve: 55,
+				deduction: 17,
+				motivation: 88,
+				time_management: 39
+			}
+		},
+		{
+			name: "Vere",
+			characteristics: {
+				attention: 61,
+				self_learning: 95,
+				resolve: 72,
+				deduction: 57,
+				motivation: 19,
+				time_management: 27
+			}
+		},
+		{
+			name: "Deirdre",
+			characteristics: {
+				attention: 19,
+				self_learning: 39,
+				resolve: 63,
+				deduction: 82,
+				motivation: 81,
+				time_management: 34
+			}
+		},
+		{
+			name: "Maryellen",
+			characteristics: {
+				attention: 79,
+				self_learning: 92,
+				resolve: 76,
+				deduction: 36,
+				motivation: 61,
+				time_management: 19
+			}
+		},
+		{
+			name: "Susan",
+			characteristics: {
+				attention: 73,
+				self_learning: 39,
+				resolve: 11,
+				deduction: 84,
+				motivation: 67,
+				time_management: 72
+			}
+		},
+		{
+			name: "Barbi",
+			characteristics: {
+				attention: 63,
+				self_learning: 70,
+				resolve: 72,
+				deduction: 90,
+				motivation: 57,
+				time_management: 65
+			}
+		},
+		{
+			name: "Jinny",
+			characteristics: {
+				attention: 49,
+				self_learning: 79,
+				resolve: 77,
+				deduction: 95,
+				motivation: 69,
+				time_management: 27
+			}
+		},
+		{
+			name: "Michaelina",
+			characteristics: {
+				attention: 51,
+				self_learning: 41,
+				resolve: 33,
+				deduction: 87,
+				motivation: 72,
+				time_management: 74
+			}
+		},
+		{
+			name: "Mireielle",
+			characteristics: {
+				attention: 32,
+				self_learning: 38,
+				resolve: 31,
+				deduction: 69,
+				motivation: 93,
+				time_management: 42
+			}
+		},
+		{
+			name: "Brianna",
+			characteristics: {
+				attention: 59,
+				self_learning: 82,
+				resolve: 13,
+				deduction: 86,
+				motivation: 18,
+				time_management: 75
+			}
+		},
+		{
+			name: "Emelina",
+			characteristics: {
+				attention: 81,
+				self_learning: 26,
+				resolve: 61,
+				deduction: 35,
+				motivation: 92,
+				time_management: 19
+			}
+		},
+		{
+			name: "Ardeen",
+			characteristics: {
+				attention: 56,
+				self_learning: 45,
+				resolve: 84,
+				deduction: 52,
+				motivation: 22,
+				time_management: 32
+			}
+		},
+		{
+			name: "Gaylene",
+			characteristics: {
+				attention: 22,
+				self_learning: 36,
+				resolve: 67,
+				deduction: 32,
+				motivation: 30,
+				time_management: 65
+			}
+		},
+		{
+			name: "Stevana",
+			characteristics: {
+				attention: 55,
+				self_learning: 25,
+				resolve: 75,
+				deduction: 39,
+				motivation: 83,
+				time_management: 36
+			}
+		},
+		{
+			name: "Dulce",
+			characteristics: {
+				attention: 52,
+				self_learning: 68,
+				resolve: 16,
+				deduction: 93,
+				motivation: 18,
+				time_management: 47
+			}
+		},
+		{
+			name: "Valera",
+			characteristics: {
+				attention: 16,
+				self_learning: 38,
+				resolve: 40,
+				deduction: 41,
+				motivation: 51,
+				time_management: 77
+			}
+		},
+		{
+			name: "Nelle",
+			characteristics: {
+				attention: 49,
+				self_learning: 61,
+				resolve: 65,
+				deduction: 39,
+				motivation: 47,
+				time_management: 14
+			}
+		},
+		{
+			name: "Ottilie",
+			characteristics: {
+				attention: 20,
+				self_learning: 32,
+				resolve: 46,
+				deduction: 42,
+				motivation: 67,
+				time_management: 22
+			}
+		},
+		{
+			name: "Deloria",
+			characteristics: {
+				attention: 77,
+				self_learning: 14,
+				resolve: 68,
+				deduction: 72,
+				motivation: 19,
+				time_management: 86
+			}
+		},
+		{
+			name: "Vinita",
+			characteristics: {
+				attention: 88,
+				self_learning: 56,
+				resolve: 79,
+				deduction: 28,
+				motivation: 94,
+				time_management: 75
+			}
+		},
+		{
+			name: "Petronia",
+			characteristics: {
+				attention: 62,
+				self_learning: 37,
+				resolve: 92,
+				deduction: 49,
+				motivation: 35,
+				time_management: 18
+			}
+		},
+		{
+			name: "Elfreda",
+			characteristics: {
+				attention: 32,
+				self_learning: 11,
+				resolve: 21,
+				deduction: 52,
+				motivation: 36,
+				time_management: 41
+			}
+		},
+		{
+			name: "Jessamyn",
+			characteristics: {
+				attention: 70,
+				self_learning: 84,
+				resolve: 65,
+				deduction: 88,
+				motivation: 55,
+				time_management: 62
+			}
+		},
+		{
+			name: "Maurene",
+			characteristics: {
+				attention: 81,
+				self_learning: 75,
+				resolve: 20,
+				deduction: 86,
+				motivation: 56,
+				time_management: 58
+			}
+		},
+		{
+			name: "Nita",
+			characteristics: {
+				attention: 73,
+				self_learning: 10,
+				resolve: 23,
+				deduction: 18,
+				motivation: 48,
+				time_management: 59
+			}
+		},
+		{
+			name: "Danny",
+			characteristics: {
+				attention: 49,
+				self_learning: 90,
+				resolve: 57,
+				deduction: 34,
+				motivation: 53,
+				time_management: 66
+			}
+		}
+	]
+
+
+
+|RESOURCES|:
+	[
+		{
+			name: "http://resources.infosecinstitute.com/",
+			concepts: [
+				"Problem Solving",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 23,
+				self-learning: 21,
+				resolve: 84,
+				deduction: 57,
+				motivation: 40,
+				time_management: 67
+			}
+		},
+		{
+			name: "http://udemy.com/",
+			concepts: [
+				"Critical Thinking",
+				"Critical Thinking"
+			],
+			characteristics: {
+				attention: 37,
+				self-learning: 13,
+				resolve: 20,
+				deduction: 43,
+				motivation: 77,
+				time_management: 47
+			}
+		},
+		{
+			name: "http://opensecuritytraining.info/Welcome.html",
+			concepts: [
+				"Critical Thinking",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 37,
+				self-learning: 33,
+				resolve: 59,
+				deduction: 58,
+				motivation: 40,
+				time_management: 11
+			}
+		},
+		{
+			name: "https://archive.org/stream/pdfy-rJnW-pPgiHK61dok/Black%20Hat%20Python,%20Python%20Programming%20for%20Hackers_djvu.txt",
+			concepts: [
+				"Web Developing",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 29,
+				self-learning: 61,
+				resolve: 70,
+				deduction: 37,
+				motivation: 66,
+				time_management: 77
+			}
+		},
+		{
+			name: "https://n0where.net/",
+			concepts: [
+				"Code Structure",
+				"Code Structure"
+			],
+			characteristics: {
+				attention: 60,
+				self-learning: 7,
+				resolve: 30,
+				deduction: 77,
+				motivation: 8,
+				time_management: 3
+			}
+		},
+		{
+			name: "https://www.sans.org/reading-room/",
+			concepts: [
+				"Critical Thinking",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 74,
+				self-learning: 68,
+				resolve: 79,
+				deduction: 4,
+				motivation: 52,
+				time_management: 75
+			}
+		},
+		{
+			name: "https://www.offensive-security.com/metasploit-unleashed",
+			concepts: [
+				"Web Developing",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 26,
+				self-learning: 50,
+				resolve: 29,
+				deduction: 20,
+				motivation: 74,
+				time_management: 67
+			}
+		},
+		{
+			name: "https://www.sans.org/reading-room/",
+			concepts: [
+				"Web Developing",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 24,
+				self-learning: 73,
+				resolve: 23,
+				deduction: 72,
+				motivation: 48,
+				time_management: 56
+			}
+		},
+		{
+			name: "https://www.sans.org/reading-room/",
+			concepts: [
+				"Problem Solving",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 70,
+				self-learning: 46,
+				resolve: 60,
+				deduction: 41,
+				motivation: 3,
+				time_management: 3
+			}
+		},
+		{
+			name: "http://www.allitebooks.com/",
+			concepts: [
+				"Code Structure",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 18,
+				self-learning: 79,
+				resolve: 25,
+				deduction: 45,
+				motivation: 76,
+				time_management: 11
+			}
+		},
+		{
+			name: "https://www.sans.org/reading-room/",
+			concepts: [
+				"Critical Thinking",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 24,
+				self-learning: 13,
+				resolve: 19,
+				deduction: 9,
+				motivation: 17,
+				time_management: 54
+			}
+		},
+		{
+			name: "https://www.offensive-security.com/metasploit-unleashed",
+			concepts: [
+				"Critical Thinking",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 42,
+				self-learning: 11,
+				resolve: 38,
+				deduction: 40,
+				motivation: 38,
+				time_management: 73
+			}
+		},
+		{
+			name: "https://github.com/ctfs",
+			concepts: [
+				"Critical Thinking",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 10,
+				self-learning: 55,
+				resolve: 14,
+				deduction: 39,
+				motivation: 3,
+				time_management: 71
+			}
+		},
+		{
+			name: "http://www.mediafire.com/file/q65jayzqjcah87a/eBook.pdf",
+			concepts: [
+				"Code Structure",
+				"Code Structure"
+			],
+			characteristics: {
+				attention: 60,
+				self-learning: 1,
+				resolve: 81,
+				deduction: 28,
+				motivation: 14,
+				time_management: 33
+			}
+		},
+		{
+			name: "http://opensecuritytraining.info/Welcome.html",
+			concepts: [
+				"Problem Solving",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 85,
+				self-learning: 33,
+				resolve: 42,
+				deduction: 35,
+				motivation: 73,
+				time_management: 26
+			}
+		},
+		{
+			name: "Blackboard",
+			concepts: [
+				"Critical Thinking",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 70,
+				self-learning: 23,
+				resolve: 80,
+				deduction: 15,
+				motivation: 36,
+				time_management: 62
+			}
+		},
+		{
+			name: "http://www.learn-c.org/",
+			concepts: [
+				"Code Structure",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 56,
+				self-learning: 39,
+				resolve: 55,
+				deduction: 55,
+				motivation: 43,
+				time_management: 27
+			}
+		},
+		{
+			name: "http://www.allitebooks.com/",
+			concepts: [
+				"Critical Thinking",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 30,
+				self-learning: 12,
+				resolve: 41,
+				deduction: 35,
+				motivation: 45,
+				time_management: 46
+			}
+		},
+		{
+			name: "https://github.com/ctfs",
+			concepts: [
+				"Problem Solving",
+				"Code Structure"
+			],
+			characteristics: {
+				attention: 11,
+				self-learning: 15,
+				resolve: 20,
+				deduction: 40,
+				motivation: 25,
+				time_management: 30
+			}
+		},
+		{
+			name: "http://opensecuritytraining.info/Training.html",
+			concepts: [
+				"Code Structure",
+				"Critical Thinking"
+			],
+			characteristics: {
+				attention: 57,
+				self-learning: 51,
+				resolve: 29,
+				deduction: 46,
+				motivation: 35,
+				time_management: 40
+			}
+		},
+		{
+			name: "http://www.learn-c.org/",
+			concepts: [
+				"Code Structure",
+				"Code Structure"
+			],
+			characteristics: {
+				attention: 19,
+				self-learning: 2,
+				resolve: 46,
+				deduction: 46,
+				motivation: 56,
+				time_management: 13
+			}
+		},
+		{
+			name: "http://pastebin.com/raw/cRYvK4jb",
+			concepts: [
+				"Web Developing",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 43,
+				self-learning: 77,
+				resolve: 84,
+				deduction: 16,
+				motivation: 85,
+				time_management: 54
+			}
+		},
+		{
+			name: "https://n0where.net/",
+			concepts: [
+				"Problem Solving",
+				"Critical Thinking"
+			],
+			characteristics: {
+				attention: 73,
+				self-learning: 34,
+				resolve: 1,
+				deduction: 63,
+				motivation: 50,
+				time_management: 56
+			}
+		},
+		{
+			name: "https://archive.org/stream/pdfy-rJnW-pPgiHK61dok/Black%20Hat%20Python,%20Python%20Programming%20for%20Hackers_djvu.txt",
+			concepts: [
+				"Code Structure",
+				"Critical Thinking"
+			],
+			characteristics: {
+				attention: 13,
+				self-learning: 65,
+				resolve: 84,
+				deduction: 35,
+				motivation: 19,
+				time_management: 38
+			}
+		},
+		{
+			name: "http://pastebin.com/raw/0SNSvyjJ",
+			concepts: [
+				"Code Structure",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 13,
+				self-learning: 69,
+				resolve: 47,
+				deduction: 18,
+				motivation: 62,
+				time_management: 78
+			}
+		},
+		{
+			name: "http://www.securitytube.net/",
+			concepts: [
+				"Web Developing",
+				"Code Structure"
+			],
+			characteristics: {
+				attention: 32,
+				self-learning: 60,
+				resolve: 30,
+				deduction: 49,
+				motivation: 14,
+				time_management: 60
+			}
+		},
+		{
+			name: "https://n0where.net/",
+			concepts: [
+				"Web Developing",
+				"Code Structure"
+			],
+			characteristics: {
+				attention: 3,
+				self-learning: 84,
+				resolve: 52,
+				deduction: 59,
+				motivation: 3,
+				time_management: 44
+			}
+		},
+		{
+			name: "http://www.securitytube.net/",
+			concepts: [
+				"Problem Solving",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 49,
+				self-learning: 44,
+				resolve: 63,
+				deduction: 55,
+				motivation: 28,
+				time_management: 73
+			}
+		},
+		{
+			name: "https://mega.nz/#F!yRVgCZwa!X2dBn1YuOd4ureIxjM-mZg",
+			concepts: [
+				"Critical Thinking",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 18,
+				self-learning: 58,
+				resolve: 44,
+				deduction: 23,
+				motivation: 36,
+				time_management: 60
+			}
+		},
+		{
+			name: "http://www.securitytube.net/",
+			concepts: [
+				"Code Structure",
+				"Web Developing"
+			],
+			characteristics: {
+				attention: 33,
+				self-learning: 40,
+				resolve: 31,
+				deduction: 4,
+				motivation: 80,
+				time_management: 34
+			}
+		},
+		{
+			name: "http://www.mediafire.com/file/q65jayzqjcah87a/eBook.pdf",
+			concepts: [
+				"Code Structure",
+				"Code Structure"
+			],
+			characteristics: {
+				attention: 36,
+				self-learning: 83,
+				resolve: 23,
+				deduction: 1,
+				motivation: 44,
+				time_management: 75
+			}
+		},
+		{
+			name: "https://beginners.re/",
+			concepts: [
+				"Problem Solving",
+				"Problem Solving"
+			],
+			characteristics: {
+				attention: 69,
+				self-learning: 55,
+				resolve: 21,
+				deduction: 52,
+				motivation: 37,
+				time_management: 59
+			}
+		}
+
+]
+

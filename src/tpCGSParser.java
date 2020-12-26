@@ -3,6 +3,7 @@
     import java.util.HashMap;
     import java.util.ArrayList;
 
+
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -92,50 +93,6 @@ public class tpCGSParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-
-
-	  class Entity {
-	    HashMap<String, JsonValue> data;
-	  }
-
-	  interface JsonValue {}
-
-	  class JsonString implements JsonValue {
-	    String val = "";
-
-	    JsonString(String i){
-	        this.val = i;
-	       }
-	 @Override
-	    public String toString(){
-	        return this.val;
-	    }
-	   }
-	  class JsonNum implements JsonValue {
-	   Integer val = -1;
-
-	   JsonNum(Integer i){
-	    this.val = i;
-	   }
-	  }
-
-	  class Json implements JsonValue {
-	    HashMap<String, JsonValue> val;
-
-	    Json (HashMap<String, JsonValue> req){
-	        this.val = req;
-	    }
-	  }
-
-	  class JsonList implements JsonValue{
-	    ArrayList<String> val;
-
-	    JsonList (ArrayList<String> req){
-	        this.val = req;
-	    }
-	  }
-
-
 	public tpCGSParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
@@ -211,8 +168,9 @@ public class tpCGSParser extends Parser {
 			match(T__0);
 			setState(34);
 			((MainContext)_localctx).r1 = jsonList(resources);
-			 for(Integer key : ((MainContext)_localctx).r1.genOUT.keySet())
-			                                        System.out.println(((MainContext)_localctx).r1.genOUT.get(key).data.get("name"));
+			 //for(Integer key : ((MainContext)_localctx).r1.genOUT.keySet())
+			                                        //System.out.println(((MainContext)_localctx).r1.genOUT.get(key).data.get("name"));
+			                                        View v = new View(((MainContext)_localctx).c1.conceptsOUT,((MainContext)_localctx).a1.genOUT,((MainContext)_localctx).r1.genOUT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -264,8 +222,6 @@ public class tpCGSParser extends Parser {
 
 		    Entity ent = new Entity();
 		    ent.data = new HashMap<>();
-		    Entity ent2 =  new Entity();
-		    ent2.data = new HashMap<>();
 		    Integer i = 0;
 
 		int _la;
@@ -291,7 +247,8 @@ public class tpCGSParser extends Parser {
 					match(T__2);
 					setState(41);
 					((JsonListContext)_localctx).g2 = jsonObject();
-					 ent2.data = ((JsonListContext)_localctx).g2.ret; _localctx.genOUT.put(i,ent2);((JsonListContext)_localctx).genOUT = _localctx.genIN;i=i+1; System.out.println(i);
+					 Entity ent2 =  new Entity();
+					                        ent2.data = ((JsonListContext)_localctx).g2.ret; _localctx.genOUT.put(i,ent2);((JsonListContext)_localctx).genOUT = _localctx.genIN;i=i+1;
 					}
 					}
 					setState(48);
