@@ -7,7 +7,7 @@
 			name: "Shannah",
 			characteristics: {
 				attention: 70,
-				self_learning: 84,
+				self-learning: 84,
 				resolve: 62,
 				deduction: 74,
 				motivation: 25,
@@ -18,7 +18,7 @@
 			name: "Arabel",
 			characteristics: {
 				attention: 19,
-				self_learning: 65,
+				self-learning: 65,
 				resolve: 95,
 				deduction: 71,
 				motivation: 69,
@@ -29,7 +29,7 @@
 			name: "Minne",
 			characteristics: {
 				attention: 94,
-				self_learning: 18,
+				self-learning: 18,
 				resolve: 14,
 				deduction: 14,
 				motivation: 62,
@@ -40,7 +40,7 @@
 			name: "Mariele",
 			characteristics: {
 				attention: 18,
-				self_learning: 20,
+				self-learning: 20,
 				resolve: 38,
 				deduction: 22,
 				motivation: 58,
@@ -51,7 +51,7 @@
 			name: "Blinni",
 			characteristics: {
 				attention: 91,
-				self_learning: 48,
+				self-learning: 48,
 				resolve: 63,
 				deduction: 37,
 				motivation: 63,
@@ -62,7 +62,7 @@
 			name: "Arlina",
 			characteristics: {
 				attention: 43,
-				self_learning: 81,
+				self-learning: 81,
 				resolve: 81,
 				deduction: 56,
 				motivation: 91,
@@ -73,7 +73,7 @@
 			name: "Anthia",
 			characteristics: {
 				attention: 32,
-				self_learning: 65,
+				self-learning: 65,
 				resolve: 86,
 				deduction: 65,
 				motivation: 14,
@@ -84,7 +84,7 @@
 			name: "Rozele",
 			characteristics: {
 				attention: 16,
-				self_learning: 46,
+				self-learning: 46,
 				resolve: 29,
 				deduction: 18,
 				motivation: 29,
@@ -95,7 +95,7 @@
 			name: "Tilly",
 			characteristics: {
 				attention: 64,
-				self_learning: 19,
+				self-learning: 19,
 				resolve: 12,
 				deduction: 61,
 				motivation: 41,
@@ -106,7 +106,7 @@
 			name: "Dennie",
 			characteristics: {
 				attention: 20,
-				self_learning: 51,
+				self-learning: 51,
 				resolve: 11,
 				deduction: 70,
 				motivation: 63,
@@ -117,7 +117,7 @@
 			name: "Micheline",
 			characteristics: {
 				attention: 93,
-				self_learning: 33,
+				self-learning: 33,
 				resolve: 50,
 				deduction: 82,
 				motivation: 40,
@@ -128,7 +128,7 @@
 			name: "Andeee",
 			characteristics: {
 				attention: 15,
-				self_learning: 48,
+				self-learning: 48,
 				resolve: 28,
 				deduction: 62,
 				motivation: 34,
@@ -139,7 +139,7 @@
 			name: "Fernande",
 			characteristics: {
 				attention: 61,
-				self_learning: 31,
+				self-learning: 31,
 				resolve: 11,
 				deduction: 29,
 				motivation: 68,
@@ -150,7 +150,7 @@
 			name: "Karly",
 			characteristics: {
 				attention: 90,
-				self_learning: 27,
+				self-learning: 27,
 				resolve: 30,
 				deduction: 18,
 				motivation: 60,
@@ -161,7 +161,7 @@
 			name: "Corene",
 			characteristics: {
 				attention: 51,
-				self_learning: 67,
+				self-learning: 67,
 				resolve: 51,
 				deduction: 62,
 				motivation: 73,
@@ -172,7 +172,7 @@
 			name: "Ericka",
 			characteristics: {
 				attention: 33,
-				self_learning: 38,
+				self-learning: 38,
 				resolve: 80,
 				deduction: 36,
 				motivation: 90,
@@ -183,7 +183,7 @@
 			name: "Eve",
 			characteristics: {
 				attention: 42,
-				self_learning: 80,
+				self-learning: 80,
 				resolve: 40,
 				deduction: 31,
 				motivation: 22,
@@ -194,7 +194,7 @@
 			name: "Ashlee",
 			characteristics: {
 				attention: 16,
-				self_learning: 91,
+				self-learning: 91,
 				resolve: 59,
 				deduction: 67,
 				motivation: 25,
@@ -205,7 +205,7 @@
 			name: "Willetta",
 			characteristics: {
 				attention: 63,
-				self_learning: 51,
+				self-learning: 51,
 				resolve: 19,
 				deduction: 16,
 				motivation: 92,
@@ -216,7 +216,7 @@
 			name: "Lanna",
 			characteristics: {
 				attention: 77,
-				self_learning: 16,
+				self-learning: 16,
 				resolve: 57,
 				deduction: 41,
 				motivation: 65,
@@ -227,7 +227,7 @@
 			name: "Britte",
 			characteristics: {
 				attention: 12,
-				self_learning: 51,
+				self-learning: 51,
 				resolve: 26,
 				deduction: 49,
 				motivation: 41,
@@ -238,7 +238,7 @@
 			name: "Lisette",
 			characteristics: {
 				attention: 56,
-				self_learning: 55,
+				self-learning: 55,
 				resolve: 40,
 				deduction: 21,
 				motivation: 51,
@@ -249,7 +249,7 @@
 			name: "Alyssa",
 			characteristics: {
 				attention: 72,
-				self_learning: 54,
+				self-learning: 54,
 				resolve: 62,
 				deduction: 19,
 				motivation: 68,
@@ -260,7 +260,7 @@
 			name: "Maye",
 			characteristics: {
 				attention: 53,
-				self_learning: 83,
+				self-learning: 83,
 				resolve: 93,
 				deduction: 42,
 				motivation: 89,
@@ -271,7 +271,7 @@
 			name: "Latisha",
 			characteristics: {
 				attention: 66,
-				self_learning: 26,
+				self-learning: 26,
 				resolve: 55,
 				deduction: 17,
 				motivation: 88,
@@ -282,7 +282,7 @@
 			name: "Vere",
 			characteristics: {
 				attention: 61,
-				self_learning: 95,
+				self-learning: 95,
 				resolve: 72,
 				deduction: 57,
 				motivation: 19,
@@ -293,7 +293,7 @@
 			name: "Deirdre",
 			characteristics: {
 				attention: 19,
-				self_learning: 39,
+				self-learning: 39,
 				resolve: 63,
 				deduction: 82,
 				motivation: 81,
@@ -304,7 +304,7 @@
 			name: "Maryellen",
 			characteristics: {
 				attention: 79,
-				self_learning: 92,
+				self-learning: 92,
 				resolve: 76,
 				deduction: 36,
 				motivation: 61,
@@ -315,7 +315,7 @@
 			name: "Susan",
 			characteristics: {
 				attention: 73,
-				self_learning: 39,
+				self-learning: 39,
 				resolve: 11,
 				deduction: 84,
 				motivation: 67,
@@ -326,7 +326,7 @@
 			name: "Barbi",
 			characteristics: {
 				attention: 63,
-				self_learning: 70,
+				self-learning: 70,
 				resolve: 72,
 				deduction: 90,
 				motivation: 57,
@@ -337,7 +337,7 @@
 			name: "Jinny",
 			characteristics: {
 				attention: 49,
-				self_learning: 79,
+				self-learning: 79,
 				resolve: 77,
 				deduction: 95,
 				motivation: 69,
@@ -348,7 +348,7 @@
 			name: "Michaelina",
 			characteristics: {
 				attention: 51,
-				self_learning: 41,
+				self-learning: 41,
 				resolve: 33,
 				deduction: 87,
 				motivation: 72,
@@ -359,7 +359,7 @@
 			name: "Mireielle",
 			characteristics: {
 				attention: 32,
-				self_learning: 38,
+				self-learning: 38,
 				resolve: 31,
 				deduction: 69,
 				motivation: 93,
@@ -370,7 +370,7 @@
 			name: "Brianna",
 			characteristics: {
 				attention: 59,
-				self_learning: 82,
+				self-learning: 82,
 				resolve: 13,
 				deduction: 86,
 				motivation: 18,
@@ -381,7 +381,7 @@
 			name: "Emelina",
 			characteristics: {
 				attention: 81,
-				self_learning: 26,
+				self-learning: 26,
 				resolve: 61,
 				deduction: 35,
 				motivation: 92,
@@ -392,7 +392,7 @@
 			name: "Ardeen",
 			characteristics: {
 				attention: 56,
-				self_learning: 45,
+				self-learning: 45,
 				resolve: 84,
 				deduction: 52,
 				motivation: 22,
@@ -403,7 +403,7 @@
 			name: "Gaylene",
 			characteristics: {
 				attention: 22,
-				self_learning: 36,
+				self-learning: 36,
 				resolve: 67,
 				deduction: 32,
 				motivation: 30,
@@ -414,7 +414,7 @@
 			name: "Stevana",
 			characteristics: {
 				attention: 55,
-				self_learning: 25,
+				self-learning: 25,
 				resolve: 75,
 				deduction: 39,
 				motivation: 83,
@@ -425,7 +425,7 @@
 			name: "Dulce",
 			characteristics: {
 				attention: 52,
-				self_learning: 68,
+				self-learning: 68,
 				resolve: 16,
 				deduction: 93,
 				motivation: 18,
@@ -436,7 +436,7 @@
 			name: "Valera",
 			characteristics: {
 				attention: 16,
-				self_learning: 38,
+				self-learning: 38,
 				resolve: 40,
 				deduction: 41,
 				motivation: 51,
@@ -447,7 +447,7 @@
 			name: "Nelle",
 			characteristics: {
 				attention: 49,
-				self_learning: 61,
+				self-learning: 61,
 				resolve: 65,
 				deduction: 39,
 				motivation: 47,
@@ -458,7 +458,7 @@
 			name: "Ottilie",
 			characteristics: {
 				attention: 20,
-				self_learning: 32,
+				self-learning: 32,
 				resolve: 46,
 				deduction: 42,
 				motivation: 67,
@@ -469,7 +469,7 @@
 			name: "Deloria",
 			characteristics: {
 				attention: 77,
-				self_learning: 14,
+				self-learning: 14,
 				resolve: 68,
 				deduction: 72,
 				motivation: 19,
@@ -480,7 +480,7 @@
 			name: "Vinita",
 			characteristics: {
 				attention: 88,
-				self_learning: 56,
+				self-learning: 56,
 				resolve: 79,
 				deduction: 28,
 				motivation: 94,
@@ -491,7 +491,7 @@
 			name: "Petronia",
 			characteristics: {
 				attention: 62,
-				self_learning: 37,
+				self-learning: 37,
 				resolve: 92,
 				deduction: 49,
 				motivation: 35,
@@ -502,7 +502,7 @@
 			name: "Elfreda",
 			characteristics: {
 				attention: 32,
-				self_learning: 11,
+				self-learning: 11,
 				resolve: 21,
 				deduction: 52,
 				motivation: 36,
@@ -513,7 +513,7 @@
 			name: "Jessamyn",
 			characteristics: {
 				attention: 70,
-				self_learning: 84,
+				self-learning: 84,
 				resolve: 65,
 				deduction: 88,
 				motivation: 55,
@@ -524,7 +524,7 @@
 			name: "Maurene",
 			characteristics: {
 				attention: 81,
-				self_learning: 75,
+				self-learning: 75,
 				resolve: 20,
 				deduction: 86,
 				motivation: 56,
@@ -535,7 +535,7 @@
 			name: "Nita",
 			characteristics: {
 				attention: 73,
-				self_learning: 10,
+				self-learning: 10,
 				resolve: 23,
 				deduction: 18,
 				motivation: 48,
@@ -546,7 +546,7 @@
 			name: "Danny",
 			characteristics: {
 				attention: 49,
-				self_learning: 90,
+				self-learning: 90,
 				resolve: 57,
 				deduction: 34,
 				motivation: 53,

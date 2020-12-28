@@ -17,7 +17,8 @@ main
     stu':'  a1=jsonList[students]
     res ':' r1=jsonList[resources] { //for(Integer key : $r1.genOUT.keySet())
                                         //System.out.println($r1.genOUT.get(key).data.get("name"));
-                                        View v = new View($c1.conceptsOUT,$a1.genOUT,$r1.genOUT);};
+                                        View v = new View($c1.conceptsOUT,$a1.genOUT,$r1.genOUT);
+                                        };
 
 jsonList[HashMap<Integer, Entity> genIN] returns [HashMap<Integer, Entity> genOUT]
 @init {

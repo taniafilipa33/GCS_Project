@@ -171,6 +171,7 @@ public class tpCGSParser extends Parser {
 			 //for(Integer key : ((MainContext)_localctx).r1.genOUT.keySet())
 			                                        //System.out.println(((MainContext)_localctx).r1.genOUT.get(key).data.get("name"));
 			                                        View v = new View(((MainContext)_localctx).c1.conceptsOUT,((MainContext)_localctx).a1.genOUT,((MainContext)_localctx).r1.genOUT);
+			                                        
 			}
 		}
 		catch (RecognitionException re) {
