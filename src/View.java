@@ -23,6 +23,17 @@ public class View {
         return (averages[0] + averages[1] + averages[2] + averages[3] + averages[4] + averages[5])/6;
     }
 
+    public float percent(Entity e1, int [] characs) {
+        float[] averages = new float[6];
+        averages[0] = characs [0] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("attention")).val;
+        averages[2] = characs [2] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("resolve")).val;
+        averages[1] = characs [1] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("self-learning")).val;
+        averages[3] = characs [3] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("deduction")).val;
+        averages[4] = characs [4] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("motivation")).val;
+        averages[5] = characs [5] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("time_management")).val;
+        return ((averages[0] + averages[1] + averages[2] + averages[3] + averages[4] + averages[5])/6) * 100;
+    }
+
     public float compare2(Entity e1, Entity e2) {
         float[] averages = new float[6];
         averages[0] = ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("attention")).val / ((JsonNum) ((Json) e2.data.get ("characteristics")).val.get ("attention")).val;
@@ -78,7 +89,7 @@ public class View {
         }
 
         for(int i = 0; i < n; i++){
-            System.out.println(i + " -> " + ((JsonString)(best_resources[i].data.get("name"))).val);
+            System.out.println(i + " -> " + ((JsonString)(best_resources[i].data.get("name"))).val + " with a match of " + percent(best_resources[i], characs) + " %");
         }
 
     }
