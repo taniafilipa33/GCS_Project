@@ -1,6 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -14,7 +12,7 @@ public class Main {
             tpCGSLexer lexer = new tpCGSLexer(CharStreams.fromFileName("GCS_Project/src/test2.txt"));
             CommonTokenStream stream = new CommonTokenStream(lexer);
             tpCGSParser parser = new tpCGSParser(stream);
-            parser.main();
+            parser.sistema();
 
         } catch (IOException e) {
             e.printStackTrace();

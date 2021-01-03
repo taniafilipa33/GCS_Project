@@ -20,37 +20,37 @@ public class tpCGSBaseListener implements tpCGSListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMain(tpCGSParser.MainContext ctx) { }
+	@Override public void enterSistema(tpCGSParser.SistemaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMain(tpCGSParser.MainContext ctx) { }
+	@Override public void exitSistema(tpCGSParser.SistemaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterJsonList(tpCGSParser.JsonListContext ctx) { }
+	@Override public void enterEntityList(tpCGSParser.EntityListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitJsonList(tpCGSParser.JsonListContext ctx) { }
+	@Override public void exitEntityList(tpCGSParser.EntityListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterJsonObject(tpCGSParser.JsonObjectContext ctx) { }
+	@Override public void enterEntityObject(tpCGSParser.EntityObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitJsonObject(tpCGSParser.JsonObjectContext ctx) { }
+	@Override public void exitEntityObject(tpCGSParser.EntityObjectContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -92,13 +92,13 @@ public class tpCGSBaseListener implements tpCGSListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterJsonValue(tpCGSParser.JsonValueContext ctx) { }
+	@Override public void enterEntityValue(tpCGSParser.EntityValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitJsonValue(tpCGSParser.JsonValueContext ctx) { }
+	@Override public void exitEntityValue(tpCGSParser.EntityValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,9 +1,10 @@
+import java.io.IOException;
 import java.util.*;
 
 public class View {
-    private ArrayList<String> concepts;
-    private HashMap<Integer, Entity> students;
-    private HashMap<Integer, Entity> resources;
+    private final ArrayList<String> concepts;
+    private final HashMap<Integer, Entity> students;
+    private final HashMap<Integer, Entity> resources;
 
     public View(ArrayList<String> c,HashMap<Integer, Entity> s, HashMap<Integer, Entity> r){
         concepts = new ArrayList<>(c);
@@ -12,7 +13,7 @@ public class View {
         start();
     }
 
-    public float compare(Entity e1, int [] characs) {
+    public float compare(Entity e1, int[] characs) {
         float[] averages = new float[6];
         averages[0] = ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("attention")).val / characs [0];
         averages[2] = ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("resolve")).val / characs [2];
@@ -23,15 +24,15 @@ public class View {
         return (averages[0] + averages[1] + averages[2] + averages[3] + averages[4] + averages[5])/6;
     }
 
-    public float percent(Entity e1, int [] characs) {
+    public float percent(Entity e1, int[] characs) {
         float[] averages = new float[6];
-        averages[0] = characs [0] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("attention")).val;
-        averages[2] = characs [2] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("resolve")).val;
-        averages[1] = characs [1] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("self-learning")).val;
-        averages[3] = characs [3] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("deduction")).val;
-        averages[4] = characs [4] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("motivation")).val;
-        averages[5] = characs [5] / ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("time_management")).val;
-        return ((averages[0] + averages[1] + averages[2] + averages[3] + averages[4] + averages[5])/6) * 100;
+        averages[0] = 100 - (characs[0] - ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("attention")).val) ;
+        averages[2] = 100 - (characs[2] - ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("resolve")).val);
+        averages[1] = 100 - (characs[1] - ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("self-learning")).val);
+        averages[3] = 100 - (characs[3] - ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("deduction")).val );
+        averages[4] = 100 - (characs[4] - ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("motivation")).val );
+        averages[5] = 100 - (characs[5] - ((JsonNum) ((Json) e1.data.get ("characteristics")).val.get ("time_management")).val);
+        return ((averages[0] + averages[1] + averages[2] + averages[3] + averages[4] + averages[5])/6);
     }
 
     public float compare2(Entity e1, Entity e2) {
@@ -63,7 +64,7 @@ public class View {
 
         }
         for (int i = 0; i < 6; i++) {
-            characs[i] = characs[i] / studentsList.size ();
+            characs[i] = characs[i] / studentsList.size();
         }
 
         for (int key : resources.keySet ()) {
@@ -71,7 +72,7 @@ public class View {
             Entity e;
             e = resources.get(key);
 
-            if (((JsonList) (resources.get (key).data.get ("concepts"))).val.contains (concep)) {
+            if (((JsonList) (resources.get(key).data.get("concepts"))).val.contains(concep)) {
                 int lesser_index = 0;
                 for (int i = 0; i < n; i++) {
                     if(best_resources[i] == null){
@@ -89,7 +90,7 @@ public class View {
         }
 
         for(int i = 0; i < n; i++){
-            System.out.println(i + " -> " + ((JsonString)(best_resources[i].data.get("name"))).val + " with a match of " + percent(best_resources[i], characs) + " %");
+            System.out.println(i + " -> " + ((JsonString)(best_resources[i].data.get("name"))).val + " with a match of " + Math.round(percent(best_resources[i], characs)) + " %");
         }
 
     }
@@ -126,7 +127,14 @@ public class View {
         int opt = 1;
 
         while(opt != 0) {
-            System.out.println("Menu:\n1 -> match students and concept with respective resources\n2 -> most inclusive resources for a certain concept\n0 -> exit");
+            System.out.println("----------------------------- Menu -----------------------------");
+            System.out.println("|                                                              |");
+            System.out.println("| 1 -> Match students and concept with respective resources    |");
+            System.out.println("| 2 -> Most inclusive resources for a certain concept          |");
+            System.out.println("| 0 -> Exit                                                    |");
+            System.out.println("|                                                              |");
+            System.out.println("----------------------------------------------------------------");
+            System.out.print(" > ");
             scan = new Scanner(System.in);
             opt = scan.nextInt();
             switch (opt){
@@ -140,15 +148,34 @@ public class View {
                     //System.out.println(conceptIndex);
                     System.out.println("Choose the number of resources you want:");
                     int n =getResourcesByConcept(conceptIndex);
-                    if(n>0)
-                        this.query1(studentsList,conceptIndex, n);
+                    if(n>0) {
+                        System.out.println ("\n\n\n\n---------------------- Result ----------------------\n");
+                        this.query1 (studentsList, conceptIndex, n);
+                        System.out.println("\n Press any key to continue to the menu.");
+
+                        try {
+                            int _ = System.in.read(new byte[2]);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
                     break;
                 case 2:
                     int conceptIndex2 = concSelector(concepts);
                     System.out.println("Choose the number of resources you want:");
                     int count = getResourcesByConcept (conceptIndex2);
-                    if(count>0)
+                    if(count>0) {
+                        System.out.println ("\n\n\n\n---------------------- Result ----------------------\n");
                         this.query2 (conceptIndex2, count);
+                        System.out.println("\n Press ENTER to continue to the menu.");
+
+                        try {
+                            int _ = System.in.read(new byte[2]);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                     break;
                 default:
                     break;
@@ -168,8 +195,9 @@ public class View {
                 if(((JsonList) (resources.get (i).data.get ("concepts"))).val.contains (concepts.get(conceptIndex2)))
                     count++;
             }
-            if(n2>count) {n2 = count; count = n2;}
-            else{ count = n2;}
+            if(n2>count) {n2 = count;
+            }
+            count = n2;
         }catch (NumberFormatException a){
             if(valor.equals ("all")) {
                 for(int i=0; i<resources.size ();i++){

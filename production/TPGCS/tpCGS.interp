@@ -31,13 +31,13 @@ QWORD
 WS
 
 rule names:
-main
-jsonList
-jsonObject
+sistema
+entityList
+entityObject
 list
 resOfL
 pairKeyValue
-jsonValue
+entityValue
 quotedWord
 word
 num

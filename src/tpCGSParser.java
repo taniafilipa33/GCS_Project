@@ -24,13 +24,13 @@ public class tpCGSParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, CONCEPTS=7, STUDENTS=8, 
 		RESOURCES=9, WORD=10, NUM=11, QWORD=12, WS=13;
 	public static final int
-		RULE_main = 0, RULE_jsonList = 1, RULE_jsonObject = 2, RULE_list = 3, 
-		RULE_resOfL = 4, RULE_pairKeyValue = 5, RULE_jsonValue = 6, RULE_quotedWord = 7, 
+		RULE_sistema = 0, RULE_entityList = 1, RULE_entityObject = 2, RULE_list = 3, 
+		RULE_resOfL = 4, RULE_pairKeyValue = 5, RULE_entityValue = 6, RULE_quotedWord = 7, 
 		RULE_word = 8, RULE_num = 9, RULE_conc = 10, RULE_stu = 11, RULE_res = 12;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"main", "jsonList", "jsonObject", "list", "resOfL", "pairKeyValue", "jsonValue", 
-			"quotedWord", "word", "num", "conc", "stu", "res"
+			"sistema", "entityList", "entityObject", "list", "resOfL", "pairKeyValue", 
+			"entityValue", "quotedWord", "word", "num", "conc", "stu", "res"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -98,10 +98,10 @@ public class tpCGSParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	public static class MainContext extends ParserRuleContext {
+	public static class SistemaContext extends ParserRuleContext {
 		public ListContext c1;
-		public JsonListContext a1;
-		public JsonListContext r1;
+		public EntityListContext a1;
+		public EntityListContext r1;
 		public ConcContext conc() {
 			return getRuleContext(ConcContext.class,0);
 		}
@@ -114,34 +114,34 @@ public class tpCGSParser extends Parser {
 		public ListContext list() {
 			return getRuleContext(ListContext.class,0);
 		}
-		public List<JsonListContext> jsonList() {
-			return getRuleContexts(JsonListContext.class);
+		public List<EntityListContext> entityList() {
+			return getRuleContexts(EntityListContext.class);
 		}
-		public JsonListContext jsonList(int i) {
-			return getRuleContext(JsonListContext.class,i);
+		public EntityListContext entityList(int i) {
+			return getRuleContext(EntityListContext.class,i);
 		}
-		public MainContext(ParserRuleContext parent, int invokingState) {
+		public SistemaContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_main; }
+		@Override public int getRuleIndex() { return RULE_sistema; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterMain(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterSistema(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitMain(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitSistema(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitMain(this);
+			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitSistema(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final MainContext main() throws RecognitionException {
-		MainContext _localctx = new MainContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_main);
+	public final SistemaContext sistema() throws RecognitionException {
+		SistemaContext _localctx = new SistemaContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_sistema);
 
 		    ArrayList<String> concepts = new ArrayList<>();
 		    HashMap<Integer, Entity> students =  new HashMap<>();
@@ -155,23 +155,20 @@ public class tpCGSParser extends Parser {
 			setState(27);
 			match(T__0);
 			setState(28);
-			((MainContext)_localctx).c1 = list(concepts);
+			((SistemaContext)_localctx).c1 = list(concepts);
 			setState(29);
 			stu();
 			setState(30);
 			match(T__0);
 			setState(31);
-			((MainContext)_localctx).a1 = jsonList(students);
+			((SistemaContext)_localctx).a1 = entityList(students);
 			setState(32);
 			res();
 			setState(33);
 			match(T__0);
 			setState(34);
-			((MainContext)_localctx).r1 = jsonList(resources);
-			 //for(Integer key : ((MainContext)_localctx).r1.genOUT.keySet())
-			                                        //System.out.println(((MainContext)_localctx).r1.genOUT.get(key).data.get("name"));
-			                                        View v = new View(((MainContext)_localctx).c1.conceptsOUT,((MainContext)_localctx).a1.genOUT,((MainContext)_localctx).r1.genOUT);
-			                                        
+			((SistemaContext)_localctx).r1 = entityList(resources);
+			   View v = new View(((SistemaContext)_localctx).c1.conceptsOUT,((SistemaContext)_localctx).a1.genOUT,((SistemaContext)_localctx).r1.genOUT);  
 			}
 		}
 		catch (RecognitionException re) {
@@ -185,41 +182,41 @@ public class tpCGSParser extends Parser {
 		return _localctx;
 	}
 
-	public static class JsonListContext extends ParserRuleContext {
+	public static class EntityListContext extends ParserRuleContext {
 		public HashMap<Integer, Entity> genIN;
 		public HashMap<Integer, Entity> genOUT;
-		public JsonObjectContext g1;
-		public JsonObjectContext g2;
-		public List<JsonObjectContext> jsonObject() {
-			return getRuleContexts(JsonObjectContext.class);
+		public EntityObjectContext g1;
+		public EntityObjectContext g2;
+		public List<EntityObjectContext> entityObject() {
+			return getRuleContexts(EntityObjectContext.class);
 		}
-		public JsonObjectContext jsonObject(int i) {
-			return getRuleContext(JsonObjectContext.class,i);
+		public EntityObjectContext entityObject(int i) {
+			return getRuleContext(EntityObjectContext.class,i);
 		}
-		public JsonListContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
-		public JsonListContext(ParserRuleContext parent, int invokingState, HashMap<Integer, Entity> genIN) {
+		public EntityListContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
+		public EntityListContext(ParserRuleContext parent, int invokingState, HashMap<Integer, Entity> genIN) {
 			super(parent, invokingState);
 			this.genIN = genIN;
 		}
-		@Override public int getRuleIndex() { return RULE_jsonList; }
+		@Override public int getRuleIndex() { return RULE_entityList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterJsonList(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterEntityList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitJsonList(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitEntityList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitJsonList(this);
+			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitEntityList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final JsonListContext jsonList(HashMap<Integer, Entity> genIN) throws RecognitionException {
-		JsonListContext _localctx = new JsonListContext(_ctx, getState(), genIN);
-		enterRule(_localctx, 2, RULE_jsonList);
+	public final EntityListContext entityList(HashMap<Integer, Entity> genIN) throws RecognitionException {
+		EntityListContext _localctx = new EntityListContext(_ctx, getState(), genIN);
+		enterRule(_localctx, 2, RULE_entityList);
 
 		    Entity ent = new Entity();
 		    ent.data = new HashMap<>();
@@ -236,8 +233,8 @@ public class tpCGSParser extends Parser {
 				setState(37);
 				match(T__1);
 				setState(38);
-				((JsonListContext)_localctx).g1 = jsonObject();
-				ent.data = ((JsonListContext)_localctx).g1.ret; genIN.put(i,ent); ((JsonListContext)_localctx).genOUT = _localctx.genIN; i=1;
+				((EntityListContext)_localctx).g1 = entityObject();
+				ent.data = ((EntityListContext)_localctx).g1.ret; genIN.put(i,ent); ((EntityListContext)_localctx).genOUT = _localctx.genIN; i=1;
 				setState(46);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
@@ -247,9 +244,9 @@ public class tpCGSParser extends Parser {
 					setState(40);
 					match(T__2);
 					setState(41);
-					((JsonListContext)_localctx).g2 = jsonObject();
+					((EntityListContext)_localctx).g2 = entityObject();
 					 Entity ent2 =  new Entity();
-					                        ent2.data = ((JsonListContext)_localctx).g2.ret; _localctx.genOUT.put(i,ent2);((JsonListContext)_localctx).genOUT = _localctx.genIN;i=i+1;
+					                        ent2.data = ((EntityListContext)_localctx).g2.ret; _localctx.genOUT.put(i,ent2);((EntityListContext)_localctx).genOUT = _localctx.genIN;i=i+1;
 					}
 					}
 					setState(48);
@@ -281,7 +278,7 @@ public class tpCGSParser extends Parser {
 		return _localctx;
 	}
 
-	public static class JsonObjectContext extends ParserRuleContext {
+	public static class EntityObjectContext extends ParserRuleContext {
 		public HashMap<String, JsonValue> ret;
 		public List<PairKeyValueContext> pairKeyValue() {
 			return getRuleContexts(PairKeyValueContext.class);
@@ -289,28 +286,28 @@ public class tpCGSParser extends Parser {
 		public PairKeyValueContext pairKeyValue(int i) {
 			return getRuleContext(PairKeyValueContext.class,i);
 		}
-		public JsonObjectContext(ParserRuleContext parent, int invokingState) {
+		public EntityObjectContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_jsonObject; }
+		@Override public int getRuleIndex() { return RULE_entityObject; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterJsonObject(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterEntityObject(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitJsonObject(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitEntityObject(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitJsonObject(this);
+			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitEntityObject(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final JsonObjectContext jsonObject() throws RecognitionException {
-		JsonObjectContext _localctx = new JsonObjectContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_jsonObject);
+	public final EntityObjectContext entityObject() throws RecognitionException {
+		EntityObjectContext _localctx = new EntityObjectContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_entityObject);
 
 		    HashMap<String, JsonValue> req = new HashMap<>();
 
@@ -340,7 +337,7 @@ public class tpCGSParser extends Parser {
 			}
 			setState(63);
 			match(T__5);
-			((JsonObjectContext)_localctx).ret =  req;
+			((EntityObjectContext)_localctx).ret =  req;
 			}
 		}
 		catch (RecognitionException re) {
@@ -487,12 +484,12 @@ public class tpCGSParser extends Parser {
 		public HashMap<String, JsonValue> kIN;
 		public HashMap<String, JsonValue> kOUT;
 		public WordContext key;
-		public JsonValueContext vv;
+		public EntityValueContext vv;
 		public WordContext word() {
 			return getRuleContext(WordContext.class,0);
 		}
-		public JsonValueContext jsonValue() {
-			return getRuleContext(JsonValueContext.class,0);
+		public EntityValueContext entityValue() {
+			return getRuleContext(EntityValueContext.class,0);
 		}
 		public PairKeyValueContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public PairKeyValueContext(ParserRuleContext parent, int invokingState, HashMap<String, JsonValue> kIN) {
@@ -526,7 +523,7 @@ public class tpCGSParser extends Parser {
 			setState(84);
 			match(T__0);
 			setState(85);
-			((PairKeyValueContext)_localctx).vv = jsonValue();
+			((PairKeyValueContext)_localctx).vv = entityValue();
 			_localctx.kIN.put((((PairKeyValueContext)_localctx).key!=null?_input.getText(((PairKeyValueContext)_localctx).key.start,((PairKeyValueContext)_localctx).key.stop):null), ((PairKeyValueContext)_localctx).vv.val);((PairKeyValueContext)_localctx).kOUT =  _localctx.kIN; 
 			}
 		}
@@ -541,11 +538,11 @@ public class tpCGSParser extends Parser {
 		return _localctx;
 	}
 
-	public static class JsonValueContext extends ParserRuleContext {
+	public static class EntityValueContext extends ParserRuleContext {
 		public JsonValue val;
 		public NumContext num;
 		public QuotedWordContext quotedWord;
-		public JsonObjectContext ret;
+		public EntityObjectContext ret;
 		public ListContext c2;
 		public NumContext num() {
 			return getRuleContext(NumContext.class,0);
@@ -553,34 +550,34 @@ public class tpCGSParser extends Parser {
 		public QuotedWordContext quotedWord() {
 			return getRuleContext(QuotedWordContext.class,0);
 		}
-		public JsonObjectContext jsonObject() {
-			return getRuleContext(JsonObjectContext.class,0);
+		public EntityObjectContext entityObject() {
+			return getRuleContext(EntityObjectContext.class,0);
 		}
 		public ListContext list() {
 			return getRuleContext(ListContext.class,0);
 		}
-		public JsonValueContext(ParserRuleContext parent, int invokingState) {
+		public EntityValueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_jsonValue; }
+		@Override public int getRuleIndex() { return RULE_entityValue; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterJsonValue(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).enterEntityValue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitJsonValue(this);
+			if ( listener instanceof tpCGSListener ) ((tpCGSListener)listener).exitEntityValue(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitJsonValue(this);
+			if ( visitor instanceof tpCGSVisitor ) return ((tpCGSVisitor<? extends T>)visitor).visitEntityValue(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final JsonValueContext jsonValue() throws RecognitionException {
-		JsonValueContext _localctx = new JsonValueContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_jsonValue);
+	public final EntityValueContext entityValue() throws RecognitionException {
+		EntityValueContext _localctx = new EntityValueContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_entityValue);
 
 		ArrayList<String> concepts = new ArrayList<>();
 
@@ -592,32 +589,32 @@ public class tpCGSParser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(88);
-				((JsonValueContext)_localctx).num = num();
-				((JsonValueContext)_localctx).val =  new JsonNum(Integer.parseInt((((JsonValueContext)_localctx).num!=null?_input.getText(((JsonValueContext)_localctx).num.start,((JsonValueContext)_localctx).num.stop):null)));
+				((EntityValueContext)_localctx).num = num();
+				((EntityValueContext)_localctx).val =  new JsonNum(Integer.parseInt((((EntityValueContext)_localctx).num!=null?_input.getText(((EntityValueContext)_localctx).num.start,((EntityValueContext)_localctx).num.stop):null)));
 				}
 				break;
 			case QWORD:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(91);
-				((JsonValueContext)_localctx).quotedWord = quotedWord();
-				String p = (((JsonValueContext)_localctx).quotedWord!=null?_input.getText(((JsonValueContext)_localctx).quotedWord.start,((JsonValueContext)_localctx).quotedWord.stop):null).toString(); ((JsonValueContext)_localctx).val =  new JsonString(p);
+				((EntityValueContext)_localctx).quotedWord = quotedWord();
+				String p = (((EntityValueContext)_localctx).quotedWord!=null?_input.getText(((EntityValueContext)_localctx).quotedWord.start,((EntityValueContext)_localctx).quotedWord.stop):null).toString(); ((EntityValueContext)_localctx).val =  new JsonString(p);
 				}
 				break;
 			case T__4:
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(94);
-				((JsonValueContext)_localctx).ret = jsonObject();
-				((JsonValueContext)_localctx).val =  new Json(((JsonValueContext)_localctx).ret.ret);
+				((EntityValueContext)_localctx).ret = entityObject();
+				((EntityValueContext)_localctx).val =  new Json(((EntityValueContext)_localctx).ret.ret);
 				}
 				break;
 			case T__1:
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(97);
-				((JsonValueContext)_localctx).c2 = list(concepts);
-				((JsonValueContext)_localctx).val =  new JsonList(((JsonValueContext)_localctx).c2.conceptsOUT);
+				((EntityValueContext)_localctx).c2 = list(concepts);
+				((EntityValueContext)_localctx).val =  new JsonList(((EntityValueContext)_localctx).c2.conceptsOUT);
 				}
 				break;
 			default:

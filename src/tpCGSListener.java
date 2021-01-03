@@ -12,35 +12,35 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface tpCGSListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link tpCGSParser#main}.
+	 * Enter a parse tree produced by {@link tpCGSParser#sistema}.
 	 * @param ctx the parse tree
 	 */
-	void enterMain(tpCGSParser.MainContext ctx);
+	void enterSistema(tpCGSParser.SistemaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link tpCGSParser#main}.
+	 * Exit a parse tree produced by {@link tpCGSParser#sistema}.
 	 * @param ctx the parse tree
 	 */
-	void exitMain(tpCGSParser.MainContext ctx);
+	void exitSistema(tpCGSParser.SistemaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link tpCGSParser#jsonList}.
+	 * Enter a parse tree produced by {@link tpCGSParser#entityList}.
 	 * @param ctx the parse tree
 	 */
-	void enterJsonList(tpCGSParser.JsonListContext ctx);
+	void enterEntityList(tpCGSParser.EntityListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link tpCGSParser#jsonList}.
+	 * Exit a parse tree produced by {@link tpCGSParser#entityList}.
 	 * @param ctx the parse tree
 	 */
-	void exitJsonList(tpCGSParser.JsonListContext ctx);
+	void exitEntityList(tpCGSParser.EntityListContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link tpCGSParser#jsonObject}.
+	 * Enter a parse tree produced by {@link tpCGSParser#entityObject}.
 	 * @param ctx the parse tree
 	 */
-	void enterJsonObject(tpCGSParser.JsonObjectContext ctx);
+	void enterEntityObject(tpCGSParser.EntityObjectContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link tpCGSParser#jsonObject}.
+	 * Exit a parse tree produced by {@link tpCGSParser#entityObject}.
 	 * @param ctx the parse tree
 	 */
-	void exitJsonObject(tpCGSParser.JsonObjectContext ctx);
+	void exitEntityObject(tpCGSParser.EntityObjectContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link tpCGSParser#list}.
 	 * @param ctx the parse tree
@@ -72,15 +72,15 @@ public interface tpCGSListener extends ParseTreeListener {
 	 */
 	void exitPairKeyValue(tpCGSParser.PairKeyValueContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link tpCGSParser#jsonValue}.
+	 * Enter a parse tree produced by {@link tpCGSParser#entityValue}.
 	 * @param ctx the parse tree
 	 */
-	void enterJsonValue(tpCGSParser.JsonValueContext ctx);
+	void enterEntityValue(tpCGSParser.EntityValueContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link tpCGSParser#jsonValue}.
+	 * Exit a parse tree produced by {@link tpCGSParser#entityValue}.
 	 * @param ctx the parse tree
 	 */
-	void exitJsonValue(tpCGSParser.JsonValueContext ctx);
+	void exitEntityValue(tpCGSParser.EntityValueContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link tpCGSParser#quotedWord}.
 	 * @param ctx the parse tree

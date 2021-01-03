@@ -21,21 +21,21 @@ public class tpCGSBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMain(tpCGSParser.MainContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSistema(tpCGSParser.SistemaContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitJsonList(tpCGSParser.JsonListContext ctx) { return visitChildren(ctx); }
+	@Override public T visitEntityList(tpCGSParser.EntityListContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitJsonObject(tpCGSParser.JsonObjectContext ctx) { return visitChildren(ctx); }
+	@Override public T visitEntityObject(tpCGSParser.EntityObjectContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -63,7 +63,7 @@ public class tpCGSBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitJsonValue(tpCGSParser.JsonValueContext ctx) { return visitChildren(ctx); }
+	@Override public T visitEntityValue(tpCGSParser.EntityValueContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

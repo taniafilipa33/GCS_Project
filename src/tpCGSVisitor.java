@@ -15,23 +15,23 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface tpCGSVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link tpCGSParser#main}.
+	 * Visit a parse tree produced by {@link tpCGSParser#sistema}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMain(tpCGSParser.MainContext ctx);
+	T visitSistema(tpCGSParser.SistemaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link tpCGSParser#jsonList}.
+	 * Visit a parse tree produced by {@link tpCGSParser#entityList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitJsonList(tpCGSParser.JsonListContext ctx);
+	T visitEntityList(tpCGSParser.EntityListContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link tpCGSParser#jsonObject}.
+	 * Visit a parse tree produced by {@link tpCGSParser#entityObject}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitJsonObject(tpCGSParser.JsonObjectContext ctx);
+	T visitEntityObject(tpCGSParser.EntityObjectContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link tpCGSParser#list}.
 	 * @param ctx the parse tree
@@ -51,11 +51,11 @@ public interface tpCGSVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPairKeyValue(tpCGSParser.PairKeyValueContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link tpCGSParser#jsonValue}.
+	 * Visit a parse tree produced by {@link tpCGSParser#entityValue}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitJsonValue(tpCGSParser.JsonValueContext ctx);
+	T visitEntityValue(tpCGSParser.EntityValueContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link tpCGSParser#quotedWord}.
 	 * @param ctx the parse tree
